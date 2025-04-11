@@ -1,0 +1,56 @@
+package middleware
+
+import (
+	"charon-janus/internal/library/token"
+	"charon-janus/internal/service"
+	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/net/ghttp"
+	"net/http"
+)
+
+type sMiddleware struct{}
+
+func NewMiddleware() *sMiddleware {
+	return &sMiddleware{}
+}
+
+func init() {
+	service.RegisterMiddleware(NewMiddleware())
+}
+
+func (m *sMiddleware) AuthMiddleware(r *ghttp.Request) {
+	var (
+		handler = r.GetServeHandler()
+		//method       = r.Method
+		//apiNotAuth   = g.Map{"code": http.StatusForbidden, "message": "接口未授权"}
+		tokenMiss    = g.Map{"code": http.StatusUnauthorized, "message": "token缺失"}
+		tokenInvalid = g.Map{"code": http.StatusUnauthorized, "message": "token解析异常"}
+	)
+
+	if handler.GetMetaTag("noAuth") == "true" || handler == nil {
+		r.Middleware.Next()
+		return
+	}
+
+	authHeader := r.Header.Get("Authorization")
+	if authHeader == "" {
+		r.Response.WriteStatusExit(http.StatusUnauthorized, tokenMiss)
+		return
+	}
+	tokenString := authHeader[len("Bearer "):]
+	claims, err := token.ValidateJWT(tokenString)
+	if err != nil {
+		r.Response.WriteStatusExit(http.StatusUnauthorized, tokenInvalid)
+		return
+	}
+
+	//path, key := consts.BuildPathMethod(handler.Handler.Router.Uri, method), cache.BuildRole(claims.RoleName)
+	//value, _ := cache.Instance().Get(r.Context(), key)
+	//if k, ok := value.Map()[path]; !gconv.Bool(k) || !ok {
+	//	r.Response.WriteStatusExit(http.StatusOK, apiNotAuth)
+	//	return
+	//}
+
+	r.SetCtxVar("user", claims.Identity)
+	r.Middleware.Next()
+}

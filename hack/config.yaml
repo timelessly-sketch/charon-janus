@@ -1,0 +1,8 @@
+gfcli:
+  gen:
+    dao:
+      - link: "mysql:db_janus:w7sft7LP7taDdGLf@tcp(121.54.189.30:3306)/db_janus?loc=Local&parseTime=true&charset=utf8mb4"
+        descriptionTag: true
+        removePrefix: tb_
+        jsonCase: "CamelLower"
+        gJsonSupport: true

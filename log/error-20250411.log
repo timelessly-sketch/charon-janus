@@ -1,0 +1,295 @@
+2025-04-11 09:22:32.770 {c012468b081f351823ac5b2884cb771d} 200 "POST http localhost:8000 /login HTTP/1.1" 538112.209, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. 用户不存在
+   1).  charon-janus/internal/logic/system.(*sLogin).Login
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/login.go:37
+   2).  charon-janus/internal/controller/login.sLogin.Login
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/login/login.go:16
+
+2025-04-11 09:27:47.934 {b057d9ec511f35184e7c0517fe1bda90} 200 "POST http localhost:8000 /login HTTP/1.1" 531438.959, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. 密码错误
+   1).  charon-janus/internal/logic/system.(*sLogin).Login
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/login.go:44
+   2).  charon-janus/internal/controller/login.sLogin.Login
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/login/login.go:16
+
+2025-04-11 09:27:47.934 {b057d9ec511f35184e7c0517fe1bda90} 200 "POST http localhost:8000 /login HTTP/1.1" 0.531, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 09:28:24.639 {505400765a1f351831a94135100d27e7} 200 "POST http localhost:8000 /login HTTP/1.1" 575841.875, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. 生成Token失败
+
+2025-04-11 09:28:24.642 {505400765a1f351831a94135100d27e7} 200 "POST http localhost:8000 /login HTTP/1.1" 0.575, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 09:30:54.317 {105bde717d1f351800e0a944d4343048} 404 "GET http localhost:8000 /role/list HTTP/1.1" 193.584, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-11 09:30:54.318 {105bde717d1f351800e0a944d4343048} 404 "GET http localhost:8000 /role/list HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 09:38:40.403 {f06fdb77e91f351801e0a9447eef7827} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 2.127, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 09:42:25.269 {6009d0e51d20351802e0a944b3dae85c} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 1.811, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 09:44:30.870 {402431533b20351803e0a94451a15b3f} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 1.024, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 10:17:14.406 {28f0609a0422351804e0a944af98cec6} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.564, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 11:42:03.683 {b088a1aca5263518529b4134e86b5d6d} 200 "GET http localhost:8000 /system/userDetail HTTP/1.1" 164.916, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 51, "Validation Failed", ""
+Stack:
+用户ID缺失
+2025-04-11 11:42:03.684 {b088a1aca5263518529b4134e86b5d6d} 200 "GET http localhost:8000 /system/userDetail HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 11:44:49.189 {b0f23217cc263518f4f36512f9e4f7ea} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 509417.041, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 52, "Database Operation Error", ""
+Stack:
+1. SELECT `id`,`nick_name`,`user_name`,`password`,`name`,`department`,`user_id`,`email`,`phone`,`status`,`avatar_url`,`remark`,`created_at`,`updated_at`,`deleted_at` FROM `sys_user` WHERE ((`name` LIKE '%%') AND (`user_name` LIKE '%%')) AND `deleted_at` IS NULL LIMIT 0,10
+   1).  charon-janus/internal/logic/system.(*sUser).List
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:31
+   2).  charon-janus/internal/controller/system.(*sUser).List
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:16
+2. context canceled
+
+2025-04-11 11:44:49.189 {b0f23217cc263518f4f36512f9e4f7ea} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.509, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 11:44:50.661 {d80a4a8dcc263518f5f36512712bd7ea} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 11:44:52.903 {f887578dcc263518f6f3651242c90666} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 2.241, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 13:31:59.569 {f8dc1366a52c3518f7f36512d5c9626b} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 13:32:00.202 {88e22366a52c3518f8f365124d87b7cd} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.632, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 13:32:02.080 {885db8fba52c3518f9f36512068e1ad0} 200 "OPTIONS http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 13:32:03.135 {605dc7fba52c3518faf365128ad61ea2} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 1.054, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 16:00:46.670 {f8a7b5e6c33435182a14e26bec79047e} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 180.041, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-11 16:00:46.670 {f8a7b5e6c33435182a14e26bec79047e} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 16:00:46.694 {c00a25e8c33435182b14e26b060f5f89} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 16:00:47.004 {700444e8c33435182c14e26b5ce96791} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.308, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 16:00:58.670 {782800b2c63435182d14e26baf097095} 200 "OPTIONS http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 16:00:58.672 {80f615b2c63435182e14e26b1e224b8c} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 170.500, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-11 16:00:58.672 {80f615b2c63435182e14e26b1e224b8c} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 16:00:58.680 {f07297b2c63435182f14e26b406a14f0} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 16:00:58.968 {6042a3b2c63435183014e26b314e0e3e} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.287, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 16:04:45.414 {105ffa7cfb3435183114e26baa8724b3} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 16:04:46.073 {80e6117dfb3435183214e26b8e864e90} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.657, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 16:07:00.207 {78344fdf1a3535183314e26b7b50d9a5} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 16:07:02.245 {502e5fdf1a3535183414e26b3606459f} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 2.039, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 16:10:34.810 {70bb97d64c3535183514e26b4988cbf5} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 16:10:35.677 {3894a6d64c3535183614e26b2dff0e8a} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.867, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:49:06.930 {c8aa6e5cad3a35183714e26b25ce92f0} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:49:08.953 {e0db7a5cad3a35183814e26b405ed801} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 2.022, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:49:09.983 {30136012ae3a35183914e26bda15ff0e} 200 "OPTIONS http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:49:11.001 {48207212ae3a35183a14e26be1d783ae} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 1.017, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:49:41.540 {a0ff576bb53a35183b14e26b3ac96590} 200 "OPTIONS http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:49:42.042 {f8d2636bb53a35183c14e26b923a5b5b} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.501, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:50:07.575 {78a0237bbb3a35183d14e26ba564829b} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:50:07.828 {28952e7bbb3a35183e14e26bc7ba10ac} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.252, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:50:08.697 {70c509bebb3a35183f14e26b610030df} 200 "OPTIONS http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:50:08.942 {f80d16bebb3a35184014e26bbf626f71} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.244, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:50:38.977 {680cdfcac23a35184114e26b12559d8b} 200 "OPTIONS http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:50:38.979 {b82dfacac23a35184214e26bd327360e} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 155.792, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-11 17:50:38.979 {b82dfacac23a35184214e26bd327360e} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:50:38.989 {88f296cbc23a35184314e26b8ef2722c} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:50:39.528 {d8f0a2cbc23a35184414e26b86e37cb6} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.538, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:53:58.065 {285a6b25f13a35184514e26b2267d5e9} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:53:58.631 {20488a25f13a35184614e26b605d444f} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.564, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:53:59.836 {8843f98ef13a35184714e26b67316b33} 200 "OPTIONS http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:54:00.103 {98630f8ff13a35184814e26b4a2d8af4} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.265, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:54:21.528 {68e9f29bf63a35184914e26bbda27f05} 200 "OPTIONS http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:54:21.530 {48820b9cf63a35184a14e26b0351d062} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 144.875, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-11 17:54:21.530 {48820b9cf63a35184a14e26b0351d062} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:54:21.540 {f0bea39cf63a35184b14e26ba66b22b8} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:54:21.803 {c06cb29cf63a35184c14e26b37bc9e1f} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.262, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:54:31.920 {98255f07f93a35184d14e26b03380c29} 200 "OPTIONS http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:54:31.922 {08a17807f93a35184e14e26bd9741dc3} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 118.709, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-11 17:54:31.922 {08a17807f93a35184e14e26bd9741dc3} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:54:31.935 {c01a3708f93a35184f14e26b8a8b3381} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:54:32.453 {90d44308f93a35185014e26b99c65850} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.517, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:55:04.797 {68f0f6ae003b35185114e26bc4bcd399} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:55:05.373 {583f0daf003b35185214e26bd12738f5} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.574, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:55:06.524 {907fec15013b35185314e26bcd41436d} 200 "OPTIONS http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:55:06.815 {783bf815013b35185414e26b33f93602} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.289, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:55:12.963 {6046ac95023b35185514e26bd525f55f} 200 "OPTIONS http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:55:12.965 {f074ca95023b35185614e26be0c1c295} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 146.458, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-11 17:55:12.965 {f074ca95023b35185614e26be0c1c295} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:55:12.973 {90485196023b35185714e26b3ed60d0f} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 17:55:13.262 {c0e65f96023b35185814e26b53770166} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.287, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 18:01:43.963 {e868159f5d3b35185914e26b228404b2} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 18:01:44.799 {d85e259f5d3b35185a14e26b04e4eaf4} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.835, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 18:01:45.978 {709ced055e3b35185b14e26b69ef8a55} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.290, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 18:02:45.400 pid[10450]: all servers shutdown
+2025-04-11 20:06:52.066 {d051ecbc3142351818793e70fecc693f} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 134.458, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-11 20:06:52.068 {d051ecbc3142351818793e70fecc693f} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:06:52.080 {f000c2bd3142351819793e70d53b5b9b} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:06:52.863 {a0add8bd314235181a793e70e82fee7f} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.781, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:11:39.488 {c80797a8744235181b793e70c6f6e278} 200 "OPTIONS http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:11:40.355 {f810a9a8744235181c793e702a1b0f94} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.865, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:12:46.785 {38989f2b844235181d793e70617607b5} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.674, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:13:08.315 {785c203d894235181e793e705fce531b} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.436, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:13:22.886 {38799ebb8c4235181f793e70d9e2f918} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 256.042, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-11 20:13:22.887 {38799ebb8c4235181f793e70d9e2f918} 404 "POST http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:13:23.586 {a04843bc8c42351820793e7002c07a87} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.689, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:48:25.837 {b84690ff75443518c8880420a1c892ef} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1571537.833, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. input data match no fields in table `sys_auth_roles`
+   1).  charon-janus/internal/logic/system.(*sUser).Edit.func1
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:81
+   2).  charon-janus/internal/logic/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:75
+   3).  charon-janus/internal/controller/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:33
+
+2025-04-11 20:48:25.839 {b84690ff75443518c8880420a1c892ef} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1.571, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:48:25.851 {882d115e76443518c988042087c57b2b} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:48:26.308 {9084255e76443518ca880420dfe64e18} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.456, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:50:23.124 {a87d8d4791443518fc2ea140df37d9f5} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1686821.125, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. input data match no fields in table `sys_auth_roles`
+   1).  charon-janus/internal/logic/system.(*sUser).Edit.func1
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:82
+   2).  charon-janus/internal/logic/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:75
+   3).  charon-janus/internal/controller/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:33
+
+2025-04-11 20:50:23.124 {a87d8d4791443518fc2ea140df37d9f5} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1.686, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:50:23.138 {4800f6ac91443518fd2ea140c4166a1c} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:50:23.529 {309e06ad91443518fe2ea1403f5b38c8} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.389, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:54:50.290 {30a970e0cf443518ff2ea140db359da1} 200 "OPTIONS http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:54:51.051 {48517ee0cf443518002fa140415b56b2} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.760, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:54:52.190 {30bbb551d0443518012fa140686aeae0} 200 "OPTIONS http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:54:53.212 {a06cc651d0443518022fa140546b1105} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1020740.417, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. input data match no fields in table `sys_auth_roles`
+   1).  charon-janus/internal/logic/system.(*sUser).Edit.func1
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:82
+   2).  charon-janus/internal/logic/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:75
+   3).  charon-janus/internal/controller/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:33
+
+2025-04-11 20:54:53.212 {a06cc651d0443518022fa140546b1105} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1.020, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:54:53.223 {889a458fd0443518032fa140db3d5934} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:54:53.529 {8840548fd0443518042fa140d0e52c32} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.305, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:55:14.693 {90e1fb8ed5443518052fa1404f023175} 200 "OPTIONS http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:55:15.049 {10cc098fd5443518062fa140b0d0b272} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.355, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:55:16.602 {a0d2c900d6443518072fa140ae6d8717} 200 "OPTIONS http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:55:17.616 {98bae900d6443518082fa14039090251} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1011127.958, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. input data match no fields in table `sys_auth_roles`
+   1).  charon-janus/internal/logic/system.(*sUser).Edit.func1
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:82
+   2).  charon-janus/internal/logic/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:75
+   3).  charon-janus/internal/controller/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:33
+
+2025-04-11 20:55:17.616 {98bae900d6443518082fa14039090251} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1.011, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:55:17.627 {f82edd3dd6443518092fa140d6f2369a} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 20:55:17.933 {70b5ed3dd64435180a2fa140248a5336} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.304, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:02:41.105 {f8d82f7f3d4535180b2fa140dd37ca98} 200 "OPTIONS http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:02:41.843 {00004c7f3d4535180c2fa1400138da42} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.736, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:02:53.464 {90ebdd5f404535180d2fa14008a9dfd8} 200 "OPTIONS http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:02:54.491 {c86ffe5f404535180e2fa1400f89dd2f} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1024446.250, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. input data match no fields in table `sys_auth_roles`
+   1).  charon-janus/internal/logic/system.(*sUser).Edit.func1
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:82
+   2).  charon-janus/internal/logic/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:75
+   3).  charon-janus/internal/controller/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:33
+
+2025-04-11 21:02:54.491 {c86ffe5f404535180e2fa1400f89dd2f} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1.024, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:02:54.501 {c0aaab9d404535180f2fa140b80b5388} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:02:54.810 {f0bfbb9d40453518102fa1405ed5c392} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.308, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:04:36.652 {1016d3025845351876e34e51d6e18f09} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1669349.916, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. input data match no fields in table `sys_auth_roles`
+   1).  charon-janus/internal/logic/system.(*sUser).Edit.func1
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:82
+   2).  charon-janus/internal/logic/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:75
+   3).  charon-janus/internal/controller/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:33
+
+2025-04-11 21:11:05.117 {008e5487b24535189ece5819a23c7e68} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1364718.916, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 54, "Missing Parameter", ""
+Stack:
+1. data list cannot be empty
+   1).  charon-janus/internal/logic/system.(*sUser).Edit.func1
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:78
+   2).  charon-janus/internal/logic/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:74
+   3).  charon-janus/internal/controller/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:33
+
+2025-04-11 21:11:05.118 {008e5487b24535189ece5819a23c7e68} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1.364, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:11:05.977 {20ad4fd9b24535189fce5819c17ac0a6} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.848, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:11:28.233 {80357e3ab8453518a0ce5819ca9d7958} 200 "OPTIONS http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:11:30.097 {583b8c3ab8453518a1ce5819904caba9} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1863048.542, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 54, "Missing Parameter", ""
+Stack:
+1. data list cannot be empty
+   1).  charon-janus/internal/logic/system.(*sUser).Edit.func1
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:78
+   2).  charon-janus/internal/logic/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:74
+   3).  charon-janus/internal/controller/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:33
+
+2025-04-11 21:11:30.097 {583b8c3ab8453518a1ce5819904caba9} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1.863, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:11:30.108 {304940aab8453518a2ce58190df99064} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:11:30.439 {408751aab8453518a3ce5819d6b4d80d} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.329, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:11:40.927 {d0b9202fbb453518a4ce5819f7c823c3} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:11:41.294 {30c1312fbb453518a5ce5819b575921f} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.365, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:11:45.835 {b023a753bc453518a6ce58197360367b} 200 "OPTIONS http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:11:46.174 {38c5b953bc453518a7ce58195e26f421} 200 "GET http localhost:8000 /system/userDetail/1 HTTP/1.1" 0.337, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:11:47.935 {188ecad0bc453518a8ce5819562d600d} 200 "OPTIONS http localhost:8000 /system/userEdit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:11:49.023 {30d6e7d0bc453518a9ce5819d8503fd6} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1085949.750, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 54, "Missing Parameter", ""
+Stack:
+1. data list cannot be empty
+   1).  charon-janus/internal/logic/system.(*sUser).Edit.func1
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:78
+   2).  charon-janus/internal/logic/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:74
+   3).  charon-janus/internal/controller/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:33
+
+2025-04-11 21:11:49.023 {30d6e7d0bc453518a9ce5819d8503fd6} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1.085, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:11:49.033 {38704a12bd453518aace5819f77bdb00} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:11:49.369 {88266212bd453518abce58190f41c0ba} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.334, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:25:31.855 {a8218c5d7c46351874d4b20e456919ac} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1219648.750, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 54, "Missing Parameter", ""
+Stack:
+1. data list cannot be empty
+   1).  charon-janus/internal/logic/system.(*sUser).Edit.func1
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:78
+   2).  charon-janus/internal/logic/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:74
+   3).  charon-janus/internal/controller/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:33
+
+2025-04-11 21:25:31.856 {a8218c5d7c46351874d4b20e456919ac} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1.219, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:25:32.247 {302c0aa77c46351875d4b20eb5dc1fab} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.379, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:25:56.059 {08092202824635186cacdb45385ce516} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1188386.708, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 54, "Missing Parameter", ""
+Stack:
+1. data list cannot be empty
+   1).  charon-janus/internal/logic/system.(*sUser).Edit.func1
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:78
+   2).  charon-janus/internal/logic/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:74
+   3).  charon-janus/internal/controller/system.(*sUser).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:33
+
+2025-04-11 21:25:56.060 {08092202824635186cacdb45385ce516} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1.188, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-11 21:25:56.456 {80a1f649824635186dacdb45b543ad5f} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.379, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"

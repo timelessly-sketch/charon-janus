@@ -1,0 +1,25 @@
+2025-04-10 21:48:17.279 {406a90fe25f93418abedbe14b661b0a0} 404 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 198.042, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-10 21:48:17.279 {406a90fe25f93418abedbe14b661b0a0} 404 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:48:54.823 {100843bc2ef934189438a13a887aa870} 500 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 1412.875, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 56, "Invalid Configuration", ""
+Stack:
+1. cannot find database driver for specified database type "mysql", did you misspell type name "mysql" or forget importing the database driver? possible reference: https://github.com/gogf/gf/tree/master/contrib/drivers
+   1).  charon-janus/internal/dao/internal.(*SysUserDao).DB
+        /Users/ylin/GolandProjects/charon-janus/internal/dao/internal/sys_user.go:72
+   2).  charon-janus/internal/dao/internal.(*SysUserDao).Ctx
+        /Users/ylin/GolandProjects/charon-janus/internal/dao/internal/sys_user.go:92
+   3).  charon-janus/internal/logic/system.(*sUser).List
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:22
+   4).  charon-janus/internal/controller/system.(*sUser).List
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:16
+
+2025-04-10 21:48:54.823 {100843bc2ef934189438a13a887aa870} 500 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.001, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:49:48.512 pid[6029]: all servers shutdown
+2025-04-10 21:56:37.266 {78e021689af934180bb0a642d622328e} 404 "GET http localhost:8000 /role/list HTTP/1.1" 81.750, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-10 21:56:37.266 {78e021689af934180bb0a642d622328e} 404 "GET http localhost:8000 /role/list HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:57:37.381 {d0525c3ca8f934180cb0a642013da0f1} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.719, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"

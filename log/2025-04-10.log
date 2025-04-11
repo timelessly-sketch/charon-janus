@@ -1,0 +1,240 @@
+2025-04-10 16:43:57.094 [INFO] {6845fde589e83418589e7100e5723dd8} openapi specification is disabled
+2025-04-10 16:43:57.094 [INFO] pid[4571]: http server started listening on [:8000]
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:22:29.703 [INFO] pid[5100]: http server started listening on [:8000]
+2025-04-10 21:22:29.703 [INFO] {6845fde589e83418589e7100e5723dd8} openapi specification is disabled
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:22:54.596 [INFO] pid[5136]: http server started listening on [:8000]
+2025-04-10 21:22:54.596 [INFO] {6845fde589e83418589e7100e5723dd8} openapi specification is disabled
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:23:04.420 [INFO] pid[5175]: http server started listening on [:8000]
+2025-04-10 21:23:04.420 [INFO] {6845fde589e83418589e7100e5723dd8} openapi specification is disabled
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:23:53.521 [INFO] pid[5194]: http server started listening on [:8000]
+2025-04-10 21:23:53.521 [INFO] {6845fde589e83418589e7100e5723dd8} openapi specification is disabled
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:24:24.873 [INFO] {6845fde589e83418589e7100e5723dd8} openapi specification is disabled
+2025-04-10 21:24:24.873 [INFO] pid[5234]: http server started listening on [:8000]
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:24:30.993 [INFO] pid[5266]: http server started listening on [:8000]
+2025-04-10 21:24:30.993 [INFO] {6845fde589e83418589e7100e5723dd8} openapi specification is disabled
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:24:41.753 [INFO] {6845fde589e83418589e7100e5723dd8} openapi specification is disabled
+2025-04-10 21:24:41.753 [INFO] pid[5296]: http server started listening on [:8000]
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:25:06.612 [INFO] {6845fde589e83418589e7100e5723dd8} openapi specification is disabled
+2025-04-10 21:25:06.612 [INFO] pid[5327]: http server started listening on [:8000]
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:25:09.509 [INFO] pid[5341]: http server started listening on [:8000]
+2025-04-10 21:25:09.509 [INFO] {6845fde589e83418589e7100e5723dd8} openapi specification is disabled
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:25:30.502 [INFO] pid[5363]: http server started listening on [:8000]
+2025-04-10 21:25:30.502 [INFO] {6845fde589e83418589e7100e5723dd8} openapi specification is disabled
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:25:56.159 [INFO] {6845fde589e83418589e7100e5723dd8} openapi specification is disabled
+2025-04-10 21:25:56.159 [INFO] pid[5396]: http server started listening on [:8000]
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:26:06.503 [INFO] {6845fde589e83418589e7100e5723dd8} openapi specification is disabled
+2025-04-10 21:26:06.503 [INFO] pid[5434]: http server started listening on [:8000]
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:26:07.750 [INFO] pid[5434]: all servers shutdown
+2025-04-10 21:34:11.922 [INFO] {90c3dcd360f834188e862a70c1da954d} openapi specification is disabled
+2025-04-10 21:34:11.922 [INFO] pid[5649]: http server started listening on [:8000]
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:34:24.571 [INFO] {90c3dcd360f834188e862a70c1da954d} openapi specification is disabled
+2025-04-10 21:34:24.571 [INFO] pid[5674]: http server started listening on [:8000]
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/useList      | charon-janus/internal/controller/system.(*sUser).List     |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:48:17.277 {c89c76fe25f93418aaedbe143ada7331} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:48:48.777 [INFO] {90c3dcd360f834188e862a70c1da954d} openapi specification is disabled
+2025-04-10 21:48:48.777 [INFO] pid[6029]: http server started listening on [:8000]
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/userList     | charon-janus/internal/controller/system.(*sUser).List     |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:48:54.819 {80df23bc2ef934189338a13abe7e3802} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:50:28.848 [INFO] {b0d8d32c44f93418ed8c8a6984324603} openapi specification is disabled
+2025-04-10 21:50:28.848 [INFO] pid[6090]: http server started listening on [:8000]
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/userList     | charon-janus/internal/controller/system.(*sUser).List     |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 21:50:54.342 {90c948904af93418ffafa642bea7d916} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:50:55.219 {50205f904af9341800b0a6424a689810} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.875, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:52:22.965 {08af98325ff9341801b0a642364b49d0} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:52:23.790 {28a3a7325ff9341802b0a6426d5a2d86} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.823, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:53:39.411 {280265d270f9341803b0a64205db59a7} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.750, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:53:51.056 {f8fc40b573f9341804b0a64200c0d7bb} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:53:51.459 {000d4cb573f9341805b0a642c6119cdc} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.401, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:54:14.854 {1011b23f79f9341806b0a642700c3a0f} 200 "OPTIONS http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:54:15.567 {288fc63f79f9341807b0a6426f663343} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.711, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:56:30.502 {e8b2e69e98f9341808b0a642dae82426} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.906, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:56:32.507 {5818c13499f9341809b0a642fb1a4808} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.397, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 21:56:37.265 {f09715689af934180ab0a64257769af1} 200 "OPTIONS http localhost:8000 /role/list HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-10 22:53:56.045 [INFO] pid[7017]: http server started listening on [:8000]
+2025-04-10 22:53:56.045 [INFO] {98c718a6bafc341801f1aa32ef19847a} openapi specification is disabled
+
+  ADDRESS | METHOD |        ROUTE         |                          HANDLER                          |    MIDDLEWARE      
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | ALL    | /*any                | github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse | GLOBAL MIDDLEWARE  
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | POST   | /login               | charon-janus/internal/controller/login.(*sLogin).Login    |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/platformList | charon-janus/internal/controller/system.(*cPlatForm).List |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+  :8000   | GET    | /system/userList     | charon-janus/internal/controller/system.(*sUser).List     |                    
+----------|--------|----------------------|-----------------------------------------------------------|--------------------
+
+2025-04-10 22:53:57.996 [INFO] pid[7017]: all servers shutdown
