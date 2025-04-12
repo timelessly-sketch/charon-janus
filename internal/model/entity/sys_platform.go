@@ -17,7 +17,7 @@ type SysPlatform struct {
 	DefaultRoute string      `json:"defaultRoute" orm:"default_route" description:"默认路由"`             // 默认路由
 	Icon         string      `json:"icon"         orm:"icon"          description:"图标"`               // 图标
 	Status       int         `json:"status"       orm:"status"        description:"状态 1 - 开启 2 - 关闭"` // 状态 1 - 开启 2 - 关闭
-	Sort         int         `json:"sort"         orm:"sort"          description:"排序"`               // 排序
+	PlatformSort int         `json:"platformSort" orm:"platform_sort" description:"排序"`               // 排序
 	CreatedAt    *gtime.Time `json:"createdAt"    orm:"created_at"    description:"创建时间"`             // 创建时间
 	UpdatedAt    *gtime.Time `json:"updatedAt"    orm:"updated_at"    description:"更新时间"`             // 更新时间
 	DeletedAt    *gtime.Time `json:"deletedAt"    orm:"deleted_at"    description:"删除时间"`             // 删除时间

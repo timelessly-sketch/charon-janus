@@ -15,12 +15,15 @@ type (
 		Login(ctx context.Context, inp *input.AccountLoginInp) (records input.LoginModel, err error)
 	}
 	IPlatForm interface {
-		List(ctx context.Context, inp *input.PlatFormInput) (records []input.PlatFormModelList, total int, err error)
+		List(ctx context.Context, inp *input.PageReq) (records []input.PlatFormModelList, total int, err error)
+		Edit(ctx context.Context, inp *input.PlatFormEditInput) (err error)
+		Options(ctx context.Context) (records []input.PlatFormModelList, err error)
 	}
 	IUser interface {
 		List(ctx context.Context, inp *input.UserInput) (records []input.UserModelList, total int, err error)
 		Detail(ctx context.Context, id int) (records input.UserModelDetail, err error)
 		Edit(ctx context.Context, inp *input.UserEditInput) (err error)
+		Reset(ctx context.Context, username string) (err error)
 	}
 )
 

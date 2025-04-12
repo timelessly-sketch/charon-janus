@@ -6,5 +6,6 @@ package logic
 
 import (
 	_ "charon-janus/internal/logic/middleware"
+	_ "charon-janus/internal/logic/privilege"
 	_ "charon-janus/internal/logic/system"
 )

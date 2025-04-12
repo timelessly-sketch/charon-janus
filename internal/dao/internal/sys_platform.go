@@ -28,7 +28,7 @@ type SysPlatformColumns struct {
 	DefaultRoute string // 默认路由
 	Icon         string // 图标
 	Status       string // 状态 1 - 开启 2 - 关闭
-	Sort         string // 排序
+	PlatformSort string // 排序
 	CreatedAt    string // 创建时间
 	UpdatedAt    string // 更新时间
 	DeletedAt    string // 删除时间
@@ -43,7 +43,7 @@ var sysPlatformColumns = SysPlatformColumns{
 	DefaultRoute: "default_route",
 	Icon:         "icon",
 	Status:       "status",
-	Sort:         "sort",
+	PlatformSort: "platform_sort",
 	CreatedAt:    "created_at",
 	UpdatedAt:    "updated_at",
 	DeletedAt:    "deleted_at",

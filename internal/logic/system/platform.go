@@ -5,6 +5,10 @@ import (
 	"charon-janus/internal/model/input"
 	"charon-janus/internal/service"
 	"context"
+	"github.com/gogf/gf/v2/database/gdb"
+	"github.com/gogf/gf/v2/errors/gerror"
+	"github.com/gogf/gf/v2/frame/g"
+	"time"
 )
 
 type sPlatForm struct{}
@@ -17,15 +21,71 @@ func init() {
 	service.RegisterPlatForm(NewPlatForm())
 }
 
-func (s *sPlatForm) List(ctx context.Context, inp *input.PlatFormInput) (records []input.PlatFormModelList, total int, err error) {
+func (s *sPlatForm) List(ctx context.Context, inp *input.PageReq) (records []input.PlatFormModelList, total int, err error) {
+	err = dao.SysPlatform.Ctx(ctx).OrderDesc(dao.SysPlatform.Columns().PlatformSort).
+		Page(inp.Page, inp.Size).ScanAndCount(&records, &total, true)
+	return
+}
+
+func (s *sPlatForm) Edit(ctx context.Context, inp *input.PlatFormEditInput) (err error) {
 	cols := dao.SysPlatform.Columns()
-	db := dao.SysPlatform.Ctx(ctx)
-	if inp.PlatformCode != "" {
-		db = db.WhereLike(cols.PlatformCode, "%"+inp.PlatformCode+"%")
+	if err = s.verify(ctx, inp.Id, g.Map{
+		cols.PlatformCode: inp.PlatformCode,
+		cols.ServerUrl:    inp.ServerUrl,
+	}); err != nil {
+		return err
 	}
-	if inp.PlatformName != "" {
-		db = db.Where(cols.PlatformName, "%"+inp.PlatformName+"%")
+	if inp.Id == 0 {
+		_, err = dao.SysPlatform.Ctx(ctx).OmitEmpty().Data(&inp.SysPlatform).Insert()
+		return err
 	}
-	err = db.Page(inp.Page, inp.Size).ScanAndCount(&records, &total, true)
+
+	return g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) (err error) {
+		if _, err = dao.SysPlatform.Ctx(ctx).WherePri(inp.Id).Data(&inp.SysPlatform).Update(); err != nil {
+			return err
+		}
+		return g.DB().GetCore().ClearCache(ctx, dao.SysPlatform.Table())
+	})
+}
+
+func (s *sPlatForm) Options(ctx context.Context) (records []input.PlatFormModelList, err error) {
+	var (
+		cols     = dao.SysAuthRoles.Columns()
+		identity = service.Middleware().GetUserIdentity(ctx)
+	)
+
+	values, err := dao.SysAuthRoles.Ctx(ctx).Fields("DISTINCT "+cols.PlatformCode).Where(cols.SysUserId, identity.Id).Array()
+	if err != nil {
+		return
+	}
+	if err = dao.SysPlatform.Ctx(ctx).WhereIn(dao.SysAuthRoles.Columns().PlatformCode, values).
+		Where(dao.SysPlatform.Columns().Status, 1).
+		Cache(gdb.CacheOption{
+			Duration: 10 * time.Minute,
+			Force:    false,
+		}).Scan(&records); err != nil {
+		return nil, err
+	}
+	return
+}
+
+func (s *sPlatForm) verify(ctx context.Context, id int, scoreMap g.Map) (err error) {
+	var (
+		cols   = dao.SysPlatform.Columns()
+		msgMap = g.MapStrStr{
+			cols.PlatformCode: "平台编码已存在，请换一个",
+			cols.ServerUrl:    "平台地址已存在，请换一个",
+		}
+	)
+
+	for k, v := range scoreMap {
+		count, err := dao.SysPlatform.Ctx(ctx).WhereNot(cols.Id, id).Where(k, v).Count()
+		if err != nil {
+			return err
+		}
+		if count > 0 {
+			return gerror.New(msgMap[k])
+		}
+	}
 	return
 }

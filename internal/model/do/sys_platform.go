@@ -19,7 +19,7 @@ type SysPlatform struct {
 	DefaultRoute interface{} // 默认路由
 	Icon         interface{} // 图标
 	Status       interface{} // 状态 1 - 开启 2 - 关闭
-	Sort         interface{} // 排序
+	PlatformSort interface{} // 排序
 	CreatedAt    *gtime.Time // 创建时间
 	UpdatedAt    *gtime.Time // 更新时间
 	DeletedAt    *gtime.Time // 删除时间

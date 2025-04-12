@@ -11,3 +11,7 @@ type PlatFormInput struct {
 type PlatFormModelList struct {
 	entity.SysPlatform
 }
+
+type PlatFormEditInput struct {
+	entity.SysPlatform
+}

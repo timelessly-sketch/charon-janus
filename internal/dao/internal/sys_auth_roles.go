@@ -21,20 +21,20 @@ type SysAuthRolesDao struct {
 
 // SysAuthRolesColumns defines and stores column names for the table sys_auth_roles.
 type SysAuthRolesColumns struct {
-	SysUserId  string // 用户的id
-	AuthRoleId string // 权限id
-	CreatedAt  string // 创建时间
-	UpdatedAt  string // 创建时间
-	DeletedAt  string // 删除时间
+	SysUserId    string // 用户的id
+	AuthRoleId   string // 权限id
+	PlatformCode string // 平台编码
+	CreatedAt    string // 创建时间
+	UpdatedAt    string // 创建时间
 }
 
 // sysAuthRolesColumns holds the columns for the table sys_auth_roles.
 var sysAuthRolesColumns = SysAuthRolesColumns{
-	SysUserId:  "sys_user_id",
-	AuthRoleId: "auth_role_id",
-	CreatedAt:  "created_at",
-	UpdatedAt:  "updated_at",
-	DeletedAt:  "deleted_at",
+	SysUserId:    "sys_user_id",
+	AuthRoleId:   "auth_role_id",
+	PlatformCode: "platform_code",
+	CreatedAt:    "created_at",
+	UpdatedAt:    "updated_at",
 }
 
 // NewSysAuthRolesDao creates and returns a new DAO object for table data access.

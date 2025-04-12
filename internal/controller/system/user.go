@@ -33,3 +33,8 @@ func (s *sUser) Edit(ctx context.Context, req *user.EditReq) (res *user.EditRes,
 	err = service.User().Edit(ctx, &req.UserEditInput)
 	return
 }
+
+func (s *sUser) Reset(ctx context.Context, req *user.ResetReq) (_ *user.ResetRes, err error) {
+	err = service.User().Reset(ctx, req.Username)
+	return
+}

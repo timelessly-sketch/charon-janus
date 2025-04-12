@@ -11,10 +11,10 @@ import (
 
 // SysAuthRoles is the golang structure of table sys_auth_roles for DAO operations like Where/Data.
 type SysAuthRoles struct {
-	g.Meta     `orm:"table:sys_auth_roles, do:true"`
-	SysUserId  interface{} // 用户的id
-	AuthRoleId interface{} // 权限id
-	CreatedAt  *gtime.Time // 创建时间
-	UpdatedAt  *gtime.Time // 创建时间
-	DeletedAt  *gtime.Time // 删除时间
+	g.Meta       `orm:"table:sys_auth_roles, do:true"`
+	SysUserId    interface{} // 用户的id
+	AuthRoleId   interface{} // 权限id
+	PlatformCode interface{} // 平台编码
+	CreatedAt    *gtime.Time // 创建时间
+	UpdatedAt    *gtime.Time // 创建时间
 }

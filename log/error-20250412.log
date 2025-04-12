@@ -1,0 +1,387 @@
+2025-04-12 11:00:58.993 {f8bbea62fc723518d582b53dc9d97f13} 404 "POST http localhost:8000 /system/userReset HTTP/1.1" 140.750, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 11:00:58.993 {f8bbea62fc723518d582b53dc9d97f13} 404 "POST http localhost:8000 /system/userReset HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 11:04:57.590 {e094fce43373351864b2ad4d63362c2b} 200 "POST http localhost:8000 /login HTTP/1.1" 192233.750, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. 密码错误
+   1).  charon-janus/internal/logic/system.(*sLogin).Login
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/login.go:43
+   2).  charon-janus/internal/controller/login.sLogin.Login
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/login/login.go:16
+
+2025-04-12 11:04:57.591 {e094fce43373351864b2ad4d63362c2b} 200 "POST http localhost:8000 /login HTTP/1.1" 0.192, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 11:05:02.653 {480fa40e3573351865b2ad4d8e90c27a} 200 "POST http localhost:8000 /login HTTP/1.1" 261577.792, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. 密码错误
+   1).  charon-janus/internal/logic/system.(*sLogin).Login
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/login.go:43
+   2).  charon-janus/internal/controller/login.sLogin.Login
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/login/login.go:16
+
+2025-04-12 11:05:02.653 {480fa40e3573351865b2ad4d8e90c27a} 200 "POST http localhost:8000 /login HTTP/1.1" 0.261, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 11:05:05.781 {40cc47ce3573351866b2ad4d6f7ca470} 200 "POST http localhost:8000 /login HTTP/1.1" 0.173, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 11:05:06.003 {20b981db3573351867b2ad4db7cf0cc8} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.174, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 11:05:41.305 {f02d46ed3d73351868b2ad4d4db64f78} 200 "GET http localhost:8000 /system/userDetail/2 HTTP/1.1" 0.818, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 11:05:55.232 {106a1d0c4173351869b2ad4dd44ba115} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1.342, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 11:05:55.409 {20509e5d417335186ab2ad4dd6040ca7} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.152, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 11:06:40.242 {60264db14b7335186bb2ad4d5940cf8e} 200 "GET http localhost:8000 /system/userDetail/2 HTTP/1.1" 0.631, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 11:06:43.826 {b8dd965c4c7335186cb2ad4d70d0f5e0} 200 "POST http localhost:8000 /system/userEdit HTTP/1.1" 1.342, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 11:06:44.017 {30ad11ae4c7335186db2ad4d81bf7b7e} 200 "GET http localhost:8000 /system/userList?page=1&size=10 HTTP/1.1" 0.166, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:05:30.451 {003a813154803518adcab539236bb79d} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 679579.125, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 52, "Database Operation Error", ""
+Stack:
+1. SELECT `id`,`platform_name`,`platform_code`,`server_url`,`default_route`,`icon`,`status`,`platform_sort`,`created_at`,`updated_at`,`deleted_at` FROM `sys_platform` WHERE `deleted_at` IS NULL ORDER BY `ASC` platform_sort LIMIT 0,10
+   1).  charon-janus/internal/logic/system.(*sPlatForm).List
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/platform.go:21
+   2).  charon-janus/internal/controller/system.(*cPlatForm).List
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/platform.go:16
+2. Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'platform_sort LIMIT 0,10' at line 1
+
+2025-04-12 15:20:15.474 {305e4e692281351815f824392200992d} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 2723.250, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 52, "Database Operation Error", ""
+Stack:
+1. SELECT COUNT(1) FROM `sys_platform` WHERE `deleted_at` IS NULL
+   1).  charon-janus/internal/logic/system.(*sPlatForm).List
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/platform.go:24
+   2).  charon-janus/internal/controller/system.(*cPlatForm).List
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/platform.go:16
+2. dial tcp 121.54.189.30:3306: connect: network is unreachable
+
+2025-04-12 15:20:15.475 {305e4e692281351815f824392200992d} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.002, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:23:18.791 {f069f4174d81351816f82439d2cf76ab} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 1114.875, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 52, "Database Operation Error", ""
+Stack:
+1. SELECT COUNT(1) FROM `sys_platform` WHERE `deleted_at` IS NULL
+   1).  charon-janus/internal/logic/system.(*sPlatForm).List
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/platform.go:24
+   2).  charon-janus/internal/controller/system.(*cPlatForm).List
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/platform.go:16
+2. dial tcp 121.54.189.30:3306: connect: network is unreachable
+
+2025-04-12 15:23:18.791 {f069f4174d81351816f82439d2cf76ab} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.001, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:24:01.789 {20e6db1a5781351817f824390b2fb444} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 1065.875, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 52, "Database Operation Error", ""
+Stack:
+1. SELECT COUNT(1) FROM `sys_platform` WHERE `deleted_at` IS NULL
+   1).  charon-janus/internal/logic/system.(*sPlatForm).List
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/platform.go:24
+   2).  charon-janus/internal/controller/system.(*cPlatForm).List
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/platform.go:16
+2. dial tcp 121.54.189.30:3306: connect: network is unreachable
+
+2025-04-12 15:24:01.789 {20e6db1a5781351817f824390b2fb444} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.001, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:25:22.141 {00c160aa6981351818f824391edb9ad7} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.635, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:25:28.292 {d800db3e6b81351819f82439297db8b3} 200 "OPTIONS http localhost:8000 /system/platform/edit HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:25:28.873 {183deb3e6b8135181af824398c794d99} 200 "POST http localhost:8000 /system/platform/edit HTTP/1.1" 0.580, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:25:29.084 {98da95626b8135181bf82439f52c090a} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.193, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:25:33.781 {f097ec5e6c8135181cf82439846d756c} 200 "POST http localhost:8000 /system/platform/edit HTTP/1.1" 0.656, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:25:34.067 {c833ec866c8135181df824391bf1a1cc} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.271, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:25:39.421 {a80071b36d8135181ef8243968b5abaa} 200 "POST http localhost:8000 /system/platform/edit HTTP/1.1" 0.583, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:25:39.631 {88e54bd76d8135181ff82439c5aedc16} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.192, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:29:10.348 {589382ce9e81351820f8243905235788} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.602, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:36:37.446 {c04e8ef00682351821f82439f663d0a3} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.453, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:37:01.160 {304f2d860c82351822f8243908130da6} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.182, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:38:36.425 {8892e9a42282351823f82439db543e14} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.442, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:38:53.201 {b8d6359a2682351824f8243958f1874c} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.217, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:39:03.170 {38db46ee2882351825f82439c057c052} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.186, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:39:07.570 {002edddc2982351826f82439503c4867} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.583, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:39:16.214 {70799df52b82351827f82439584fef97} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.222, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:39:23.379 {f879eea12d82351828f82439c43afbb2} 200 "GET http localhost:8000 /system/platform/List?page=1&size=10 HTTP/1.1" 0.201, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:40:16.615 {68ba0b133a82351829f8243909ce5956} 200 "OPTIONS http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:40:16.616 {d09c1b133a8235182af82439cb431f75} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 151.500, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:40:16.616 {d09c1b133a8235182af82439cb431f75} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:40:43.006 {d8fd1838408235182bf8243913533c39} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 110.833, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:40:43.006 {d8fd1838408235182bf8243913533c39} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:45:13.299 {488ec7267f8235182cf82439609cf9ba} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 104.042, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:45:13.300 {488ec7267f8235182cf82439609cf9ba} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:46:58.428 {50cdfca0978235182df8243932f0e62d} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 146.792, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:46:58.428 {50cdfca0978235182df8243932f0e62d} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:48:49.918 {98ed4d96b18235182ef82439d1f6b28e} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 169.959, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:48:49.918 {98ed4d96b18235182ef82439d1f6b28e} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:49:08.998 {b0d78507b68235182ff8243979bdb369} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 203.167, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:49:08.998 {b0d78507b68235182ff8243979bdb369} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:50:15.060 {88352f69c582351830f82439528ab67b} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 65.291, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:50:15.061 {88352f69c582351830f82439528ab67b} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:50:45.025 {38c12e63cc82351831f824390e784f0c} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 129.708, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:50:45.025 {38c12e63cc82351831f824390e784f0c} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:50:52.048 {d0c9d505ce82351832f82439f4592130} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 95.958, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:50:52.048 {d0c9d505ce82351832f82439f4592130} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:51:10.576 {88cb2b56d282351833f8243984c2fcc4} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 80.875, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:51:10.576 {88cb2b56d282351833f8243984c2fcc4} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:51:36.787 {40987770d882351834f8243941833dc6} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 97.708, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:51:36.787 {40987770d882351834f8243941833dc6} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:51:39.449 {70ae230fd982351835f824399363f4df} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 138.166, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:51:39.449 {70ae230fd982351835f824399363f4df} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:51:57.742 {10118051dd82351836f824392b4786fc} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 110.459, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:51:57.743 {10118051dd82351836f824392b4786fc} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:54:34.178 {70eecfbd0183351837f82439dd8735bb} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 84.167, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:54:34.178 {70eecfbd0183351837f82439dd8735bb} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:54:53.433 {d08e7c390683351838f82439577c21b2} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 94.709, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:54:53.433 {d08e7c390683351838f82439577c21b2} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:55:24.572 {88c37f790d83351839f82439c143e9e3} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 220.625, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:55:24.572 {88c37f790d83351839f82439c143e9e3} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:55:34.377 {f80af1c10f8335183af82439a1e85b18} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 72.667, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:55:34.377 {f80af1c10f8335183af82439a1e85b18} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:57:54.576 {40877666308335183bf82439550e82f8} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 100.333, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:57:54.577 {40877666308335183bf82439550e82f8} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:57:55.941 {1878d4b7308335183cf8243940aebbe1} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 154.792, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:57:55.942 {1878d4b7308335183cf8243940aebbe1} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:58:11.933 {d01d0571348335183df824396e080cdc} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 71.416, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:58:11.933 {d01d0571348335183df824396e080cdc} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:58:23.002 {f00bc004378335183ef82439e6a482ef} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 71.834, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:58:23.002 {f00bc004378335183ef82439e6a482ef} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:58:51.195 {486536953d8335183ff824396acc8fe0} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 73.042, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:58:51.195 {486536953d8335183ff824396acc8fe0} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:58:57.308 {28e095013f83351840f82439d2b1d2f6} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 81.916, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:58:57.308 {28e095013f83351840f82439d2b1d2f6} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:59:07.011 {480ee5434183351841f82439381b1c2f} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 76.541, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 15:59:07.011 {480ee5434183351841f82439381b1c2f} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:59:39.201 {e89d98c24883351842f82439c654674c} 200 "OPTIONS http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 15:59:39.708 {b8f89fc24883351843f82439f358a5a4} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.506, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:01:29.641 {a02cd75a6283351844f82439057138d8} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.511, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:04:48.434 {78b418a49083351845f824390c82b45d} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.507, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:06:45.645 {48b244eeab83351846f824394c88879b} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.509, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:06:51.537 {30592762ad83351847f8243945f7c6a3} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.162, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:08:00.912 {00f7c775bd83351848f8243971b7ba7a} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.488, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:08:59.506 {58d1581dcb83351849f82439ff534185} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.436, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:09:10.109 {30f0c9a3cd8335184af824390001f866} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.193, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:10:36.602 {a81b51b0e18335184bf824396ddd60e8} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.578, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:10:41.402 {80764be6e28335184cf824399f5f5764} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.177, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:13:08.536 {08b26815058435184df8243963584771} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.491, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:13:16.692 {88fa9608078435184ef82439caa51c0c} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.272, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:13:19.652 {d0c629bb078435184ff8243908a2a39a} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.236, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:13:26.685 {c8b7fb5d0984351850f82439d8aa3061} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.243, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:13:46.768 {d8ff55fc0d84351851f82439d9421b7d} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.490, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:13:56.657 {381dff5a1084351852f82439b8549228} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.200, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:13:58.442 {18996dc71084351853f82439f567b7ea} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.166, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:15:44.799 {b0af40782984351854f82439cc06c2b0} 200 "GET http localhost:8000 /system/platform/List?page=1&size=99 HTTP/1.1" 0.477, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:41:49.069 {681f77ca958535185d769934aa5a0775} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 174.875, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 16:41:49.070 {681f77ca958535185d769934aa5a0775} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:41:59.705 {485d6034988535185e769934b4b15060} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.269, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:41:59.713 {98f7ec44988535185f769934fe69381b} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 124.542, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 65, "Not Found", ""
+Stack:
+1. Not Found
+
+2025-04-12 16:41:59.714 {98f7ec44988535185f769934fe69381b} 404 "GET http localhost:8000 /getUserRoutes HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:42:43.852 {387f8255a28535186076993400b19258} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.910, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:42:44.006 {a872388ca285351861769934506957f5} 200 "GET http localhost:8000 /privilege/menu/list HTTP/1.1" 0.146, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:43:22.801 {d050097fab85351862769934367d6829} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.508, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:43:23.003 {486dc49dab85351863769934fb39a841} 200 "GET http localhost:8000 /privilege/menu/list HTTP/1.1" 0.195, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:55:24.204 {00f43d745386351864769934f0eb609b} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.537, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:55:24.216 {10a907955386351865769934572a3c71} 200 "OPTIONS http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:55:24.413 {10251d955386351866769934980df13a} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.195, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:55:50.812 {e84e5dbb5986351867769934890da539} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.183, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:55:50.992 {78dbd0c65986351868769934bb5a2e5e} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.170, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:56:05.537 {90368a145d86351869769934dc4c5a83} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.526, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:56:05.728 {206051345d8635186a7699340c9acc16} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.184, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:56:56.177 {d0c4cddd688635186b769934428a644b} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.545, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:56:56.331 {20a8d3fe688635186c7699345f493226} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.145, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:57:00.483 {b0dabbf3698635186d7699343027f20a} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.188, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:57:00.662 {207c5dff698635186e769934d8e6beb7} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.172, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:57:03.226 {90af6f946a8635186f769934da772f07} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.235, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:57:03.368 {e003eaa26a86351870769934ee90bda0} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.134, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:57:18.344 {2043ea1a6e863518717699340548554d} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.211, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:57:18.536 {c8b701286e86351872769934cdca8665} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.184, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:57:45.047 {d0527f3d7486351873769934b9c5892a} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.565, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:57:45.228 {1860945f748635187476993435abe290} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.174, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:57:46.719 {2018dfb87486351875769934345d3c51} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.167, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:57:46.914 {207211c37486351876769934e44c5dc4} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.191, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:58:35.006 {d8d152dc7f86351877769934dd903c2b} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.614, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 16:58:35.232 {38404e038086351878769934930183fd} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.187, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:00:42.422 {6895928a9d86351879769934116b0b4d} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.553, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:00:42.573 {a0cbf3ab9d8635187a769934e78c5ae8} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.145, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:00:53.833 {50318845a08635187b769934577ec025} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.238, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:00:53.987 {a80ee553a08635187c76993479fbf776} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.150, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:01:02.846 {98f2d262a28635187d769934b6947161} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.169, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:01:03.018 {e85f4c6da28635187e769934deb5c005} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.166, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:01:28.437 {d8901a41a88635187f76993491cbeb21} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.557, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:01:28.592 {e894bc62a886351880769934fa6a4b88} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.147, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:01:47.153 {002e8fb2ac863518817699344ebb874e} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.189, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:01:47.332 {f02703beac86351882769934c5cda5bd} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.176, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:02:07.304 {48992e51b1863518837699341af8734a} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.499, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:02:07.494 {b0347b6fb18635188476993426d1a6b1} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.180, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:02:14.209 {e8761cfdb2863518857699344cbd1e9d} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.224, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:02:14.353 {60c3b80ab386351886769934f92c63f6} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.140, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:02:27.859 {60d7c42db686351887769934ab422507} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.173, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:02:28.026 {88bb4e38b686351888769934fd4008c8} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.163, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:02:32.759 {40bc874fb7863518897699347fec8266} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.212, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:02:33.022 {e0e5885cb78635188a76993473671313} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.257, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:02:39.177 {e8c5c6b7b88635188b769934a013814f} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.586, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:02:39.394 {e0ff2adbb88635188c76993401885ea4} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.209, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:02:51.760 {d8be8abcbb8635188d7699343e7ccb32} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.204, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:02:51.921 {009c1ec9bb8635188e769934f6ae19fd} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.153, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:03:21.077 {e8a82d7dc28635188f7699347182b055} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.519, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:03:21.244 {c89bf49cc28635189076993442d79494} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.153, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:03:26.640 {a05885dac38635189176993401d969b7} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.221, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:03:26.802 {90f710e8c386351892769934c83fffa9} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.156, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:03:46.831 {18a06991c8863518937699346cc6e43b} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.163, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:03:46.980 {88fa8a9bc8863518947699343f82d73f} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.143, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:04:21.394 {70269584d0863518957699340263dae0} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.583, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:04:21.555 {08e4bca7d0863518967699345e590c86} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.153, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:04:23.315 {801f1311d1863518977699344c1f74e7} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.146, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:04:23.482 {b824271ad186351898769934c90629af} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.161, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:04:43.315 {e863e6b4d5863518997699341f6f09f2} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.218, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:04:43.481 {28308bc2d58635189a769934a9b84ed5} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.155, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:04:48.127 {f0663cd0d68635189b769934646bf541} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.277, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:04:48.334 {f02a5de1d68635189c7699342d8bec8e} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.196, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:05:29.153 {b06ca83fe08635189d769934eec592f6} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.778, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:05:29.352 {7071826ee08635189e769934068cfc27} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.191, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:05:30.287 {6892fea6e08635189f769934dc8c0aba} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.179, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:05:30.486 {f87ee5b1e0863518a076993463901da3} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.194, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:05:51.491 {d0028ba1e5863518a176993499d8fb5b} 200 "OPTIONS http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:05:51.753 {2077ada1e5863518a2769934a11ebc0f} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.259, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:05:51.762 {405bb2b1e5863518a376993484920a2a} 200 "OPTIONS http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:05:51.938 {f88fc0b1e5863518a4769934009f3bb2} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.174, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:06:15.218 {98b0c527eb863518a576993482a707a8} 200 "OPTIONS http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:06:15.238 {3801d027eb863518a67699347e3cfca4} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 19268.667, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 52, "Database Operation Error", ""
+Stack:
+1. SELECT COUNT(1) FROM `sys_platform` WHERE `deleted_at` IS NULL
+   1).  charon-janus/internal/logic/system.(*sPlatForm).List
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/platform.go:24
+   2).  charon-janus/internal/controller/system.(*cPlatForm).List
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/platform.go:16
+2. dial tcp 121.54.189.30:3306: operation was canceled
+
+2025-04-12 17:06:15.238 {3801d027eb863518a67699347e3cfca4} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.019, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:06:15.763 {20af4148eb863518a7769934706c13b6} 200 "OPTIONS http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:06:15.784 {08e84d48eb863518a87699343ebbff09} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 19816.750, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 52, "Database Operation Error", ""
+Stack:
+1. SELECT COUNT(1) FROM `sys_platform` WHERE `deleted_at` IS NULL
+   1).  charon-janus/internal/logic/system.(*sPlatForm).List
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/platform.go:24
+   2).  charon-janus/internal/controller/system.(*cPlatForm).List
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/platform.go:16
+2. dial tcp 121.54.189.30:3306: operation was canceled
+
+2025-04-12 17:06:15.784 {08e84d48eb863518a87699343ebbff09} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.019, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:06:16.302 {687b5868eb863518a97699346d402dfa} 200 "OPTIONS http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:06:16.886 {18937268eb863518aa769934730dff5e} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.582, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:06:16.893 {b8199c8beb863518ab769934a0f93179} 200 "OPTIONS http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:06:17.075 {c094aa8beb863518ac769934e1dd0b4c} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.180, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:06:25.109 {b8d25175ed863518ad7699343fd918e1} 200 "OPTIONS http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:06:25.305 {e80b5c75ed863518ae7699349a9c3473} 200 "GET http localhost:8000 /system/platform/list?page=1&size=99 HTTP/1.1" 0.195, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:06:25.310 {e0d44d81ed863518af76993407462960} 200 "OPTIONS http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 17:06:25.489 {18605881ed863518b0769934b9f43ba0} 200 "GET http localhost:8000 /privilege/menu/list?platformCode=janus HTTP/1.1" 0.178, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 18:01:39.278 {f840eefbf08935180e72d641a48c32ec} 200 "POST http localhost:8000 /system/platform/edit HTTP/1.1" 490485.084, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. 平台地址已存在，请换一个
+   1).  charon-janus/internal/logic/system.(*sPlatForm).verify
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/platform.go:59
+   2).  charon-janus/internal/logic/system.(*sPlatForm).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/platform.go:30
+   3).  charon-janus/internal/controller/system.(*cPlatForm).Edit
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/platform.go:25
+
+2025-04-12 18:01:39.279 {f840eefbf08935180e72d641a48c32ec} 200 "POST http localhost:8000 /system/platform/edit HTTP/1.1" 0.490, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 18:01:39.438 {08fe1b1af18935180f72d64183a49229} 200 "GET http localhost:8000 /system/platform/list?page=1&size=10 HTTP/1.1" 0.144, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 18:02:31.880 {70fe2825fd8935181072d6410d43f2fb} 200 "POST http localhost:8000 /system/platform/edit HTTP/1.1" 0.861, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 18:02:32.075 {d020b359fd8935181172d641afed0d03} 200 "GET http localhost:8000 /system/platform/list?page=1&size=10 HTTP/1.1" 0.175, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 18:02:36.459 {d892dd59fe8935181272d64139849d66} 200 "GET http localhost:8000 /system/platform/list?page=1&size=10 HTTP/1.1" 0.262, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 20:30:44.448 {b8e9b3a7139235181372d641bdd12879} 200 "GET http localhost:8000 /system/platform/list?page=1&size=10 HTTP/1.1" 0.657, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 20:30:55.082 {e888cf3c169235181472d641890131c5} 200 "GET http localhost:8000 /system/platform/list?page=1&size=10 HTTP/1.1" 0.198, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 21:31:24.902 {f836b9516095351875f5473b23013831} 200 "GET http localhost:8000 /system/user/detail/1 HTTP/1.1" 13305528.625, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 52, "Database Operation Error", ""
+Stack:
+1. SELECT `id`,`role_name`,`role_key`,`role_sort`,`platform_code`,`status`,`created_by`,`created_at`,`updated_at`,`deleted_at` FROM `auth_role` WHERE `status`=1
+   1).  charon-janus/internal/logic/system.(*sUser).Detail
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/user.go:45
+   2).  charon-janus/internal/controller/system.(*sUser).Detail
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/user.go:25
+   3).  charon-janus/internal/logic/middleware.(*sMiddleware).AuthMiddleware
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/middleware/auth.go:56
+2. context canceled
+
+2025-04-12 21:31:24.902 {f836b9516095351875f5473b23013831} 200 "GET http localhost:8000 /system/user/detail/1 HTTP/1.1" 13.305, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 21:31:25.463 {30ee3b8c6395351876f5473babbfd983} 200 "OPTIONS http localhost:8000 /system/platform/options HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 21:31:25.463 {1857408c6395351877f5473b6b40ee4f} 200 "OPTIONS http localhost:8000 /system/user/list?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 21:31:25.999 {70ad4b8c6395351879f5473bca96af6d} 200 "GET http localhost:8000 /system/user/list?page=1&size=10 HTTP/1.1" 0.535, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 21:31:27.968 {50ae9321649535187af5473b5670c896} 200 "OPTIONS http localhost:8000 /system/user/detail/1 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 21:31:28.356 {c828a621649535187bf5473b139efd86} 200 "GET http localhost:8000 /system/user/detail/1 HTTP/1.1" 0.386, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 21:31:40.473 {10d5478c6395351878f5473bde9413df} 200 "GET http localhost:8000 /system/platform/options HTTP/1.1" 15009753.375, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36", 52, "Database Operation Error", ""
+Stack:
+1. SELECT `platform_code` FROM `sys_auth_roles` WHERE `sys_user_id`=1
+   1).  charon-janus/internal/logic/system.(*sPlatForm).Options
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/system/platform.go:47
+   2).  charon-janus/internal/controller/system.(*cPlatForm).Options
+        /Users/ylin/GolandProjects/charon-janus/internal/controller/system/platform.go:30
+   3).  charon-janus/internal/logic/middleware.(*sMiddleware).AuthMiddleware
+        /Users/ylin/GolandProjects/charon-janus/internal/logic/middleware/auth.go:56
+2. context canceled
+
+2025-04-12 21:31:40.474 {10d5478c6395351878f5473bde9413df} 200 "GET http localhost:8000 /system/platform/options HTTP/1.1" 15.009, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 21:31:43.560 {a0abe7c2679535187cf5473b7e509c51} 200 "OPTIONS http localhost:8000 /system/user/list?page=1&size=10 HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 21:31:43.560 {e804ecc2679535187df5473bbb25f93c} 200 "OPTIONS http localhost:8000 /system/platform/options HTTP/1.1" 0.000, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 21:31:47.087 {a098ffc2679535187ef5473b465db6ec} 200 "GET http localhost:8000 /system/user/list?page=1&size=10 HTTP/1.1" 3.525, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-12 21:31:47.192 {c06300c3679535187ff5473b69921040} 200 "GET http localhost:8000 /system/platform/options HTTP/1.1" 3.630, ::1, "http://localhost:9980/", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"

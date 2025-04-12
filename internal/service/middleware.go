@@ -6,12 +6,16 @@
 package service
 
 import (
+	"charon-janus/internal/model"
+	"context"
+
 	"github.com/gogf/gf/v2/net/ghttp"
 )
 
 type (
 	IMiddleware interface {
 		AuthMiddleware(r *ghttp.Request)
+		GetUserIdentity(ctx context.Context) (user model.Identity)
 	}
 )
 

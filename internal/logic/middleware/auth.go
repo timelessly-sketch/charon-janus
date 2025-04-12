@@ -2,7 +2,9 @@ package middleware
 
 import (
 	"charon-janus/internal/library/token"
+	"charon-janus/internal/model"
 	"charon-janus/internal/service"
+	"context"
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"
 	"net/http"
@@ -43,7 +45,6 @@ func (m *sMiddleware) AuthMiddleware(r *ghttp.Request) {
 		r.Response.WriteStatusExit(http.StatusUnauthorized, tokenInvalid)
 		return
 	}
-
 	//path, key := consts.BuildPathMethod(handler.Handler.Router.Uri, method), cache.BuildRole(claims.RoleName)
 	//value, _ := cache.Instance().Get(r.Context(), key)
 	//if k, ok := value.Map()[path]; !gconv.Bool(k) || !ok {
@@ -53,4 +54,12 @@ func (m *sMiddleware) AuthMiddleware(r *ghttp.Request) {
 
 	r.SetCtxVar("user", claims.Identity)
 	r.Middleware.Next()
+}
+
+func (m *sMiddleware) GetUserIdentity(ctx context.Context) (user model.Identity) {
+	if err := g.RequestFromCtx(ctx).GetCtxVar("user").Scan(&user); err != nil {
+		g.Log().Error(ctx, err)
+		return
+	}
+	return
 }

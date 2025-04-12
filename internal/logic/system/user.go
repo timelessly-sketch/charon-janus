@@ -6,10 +6,13 @@ import (
 	"charon-janus/internal/model/input"
 	"charon-janus/internal/service"
 	"context"
+	"crypto/sha256"
+	"encoding/hex"
 	"github.com/gogf/gf/v2/container/gvar"
 	"github.com/gogf/gf/v2/database/gdb"
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/util/gconv"
 )
 
 type sUser struct{}
@@ -68,14 +71,16 @@ func (s *sUser) Edit(ctx context.Context, inp *input.UserEditInput) (err error) 
 	}
 
 	for _, id := range inp.RoleIds {
+		code, _ := dao.AuthRole.Ctx(ctx).Fields(dao.AuthMenu.Columns().PlatformCode).WherePri(id).Value()
 		authList = append(authList, entity.SysAuthRoles{
-			SysUserId:  inp.Id,
-			AuthRoleId: id,
+			SysUserId:    inp.Id,
+			AuthRoleId:   id,
+			PlatformCode: gvar.New(code).String(),
 		})
 	}
 	if inp.Id == 0 {
 		return g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) (err error) {
-			if _, err = dao.SysUser.Ctx(ctx).Data(&inp.SysUser).Insert(); err != nil {
+			if _, err = dao.SysUser.Ctx(ctx).OmitEmpty().Data(&inp.SysUser).Insert(); err != nil {
 				return err
 			}
 			if len(authList) > 0 {
@@ -103,6 +108,14 @@ func (s *sUser) Edit(ctx context.Context, inp *input.UserEditInput) (err error) 
 	})
 }
 
+func (s *sUser) Reset(ctx context.Context, username string) (err error) {
+	cols := dao.SysUser.Columns()
+	if _, err = dao.SysUser.Ctx(ctx).Where(cols.UserName, username).Data(cols.Password, s.generatePassword(username)).Update(); err != nil {
+		return err
+	}
+	return
+}
+
 func (s *sUser) verify(ctx context.Context, id int, scoreMap g.Map) (err error) {
 	var (
 		cols   = dao.SysUser.Columns()
@@ -124,4 +137,10 @@ func (s *sUser) verify(ctx context.Context, id int, scoreMap g.Map) (err error) 
 		}
 	}
 	return
+}
+
+func (s *sUser) generatePassword(password string) string {
+	hash := sha256.New()
+	hash.Write(gconv.Bytes(password))
+	return hex.EncodeToString(hash.Sum(nil))
 }
