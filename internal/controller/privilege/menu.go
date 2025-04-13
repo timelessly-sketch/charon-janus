@@ -19,3 +19,8 @@ func (m *sMenu) List(ctx context.Context, req *menu.ListReq) (res *menu.ListRes,
 	}
 	return
 }
+
+func (m *sMenu) Edit(ctx context.Context, req *menu.EditReq) (_ *menu.EditRes, err error) {
+	err = service.Menu().Edit(ctx, &req.MenuInput)
+	return
+}

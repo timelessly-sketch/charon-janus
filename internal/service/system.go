@@ -11,9 +11,6 @@ import (
 )
 
 type (
-	ILogin interface {
-		Login(ctx context.Context, inp *input.AccountLoginInp) (records input.LoginModel, err error)
-	}
 	IPlatForm interface {
 		List(ctx context.Context, inp *input.PageReq) (records []input.PlatFormModelList, total int, err error)
 		Edit(ctx context.Context, inp *input.PlatFormEditInput) (err error)
@@ -28,21 +25,9 @@ type (
 )
 
 var (
-	localLogin    ILogin
 	localPlatForm IPlatForm
 	localUser     IUser
 )
-
-func Login() ILogin {
-	if localLogin == nil {
-		panic("implement not found for interface ILogin, forgot register?")
-	}
-	return localLogin
-}
-
-func RegisterLogin(i ILogin) {
-	localLogin = i
-}
 
 func PlatForm() IPlatForm {
 	if localPlatForm == nil {

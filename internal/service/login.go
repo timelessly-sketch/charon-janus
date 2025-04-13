@@ -11,23 +11,23 @@ import (
 )
 
 type (
-	IMenu interface {
-		List(ctx context.Context, code string) (records []input.MenuModelList, err error)
-		Edit(ctx context.Context, inp *input.MenuInput) (err error)
+	ILogin interface {
+		Login(ctx context.Context, inp *input.AccountLoginInp) (records input.LoginModel, err error)
+		UserRoutes(ctx context.Context, code string) (records []input.UserRoutes, err error)
 	}
 )
 
 var (
-	localMenu IMenu
+	localLogin ILogin
 )
 
-func Menu() IMenu {
-	if localMenu == nil {
-		panic("implement not found for interface IMenu, forgot register?")
+func Login() ILogin {
+	if localLogin == nil {
+		panic("implement not found for interface ILogin, forgot register?")
 	}
-	return localMenu
+	return localLogin
 }
 
-func RegisterMenu(i IMenu) {
-	localMenu = i
+func RegisterLogin(i ILogin) {
+	localLogin = i
 }

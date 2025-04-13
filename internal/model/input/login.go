@@ -1,5 +1,7 @@
 package input
 
+import "charon-janus/internal/model/entity"
+
 type AccountLoginInp struct {
 	Nickname string `json:"nickname" v:"required#昵称不能为空" dc:"用户名"`
 	Password string `json:"password" v:"required#密码不能为空" dc:"密码"`
@@ -14,4 +16,8 @@ type LoginModel struct {
 	Name     string   `json:"name" dc:"中文名"`
 	Token    string   `json:"token" dc:"token"`
 	Role     []string `json:"role" dc:"权限组"`
+}
+
+type UserRoutes struct {
+	entity.AuthMenu
 }

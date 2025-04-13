@@ -13,3 +13,12 @@ type AccountLoginReq struct {
 type AccountLoginRes struct {
 	input.LoginModel
 }
+
+type UserRoutesReq struct {
+	g.Meta       `path:"/getUserRoutes" method:"get" summary:"获取用户权限目录"`
+	PlatFormCode string `json:"platformCode"`
+}
+
+type UserRoutesRes struct {
+	Records []input.UserRoutes `json:"records"`
+}

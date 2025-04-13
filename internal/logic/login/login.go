@@ -1,4 +1,4 @@
-package system
+package login
 
 import (
 	"charon-janus/internal/dao"
@@ -63,6 +63,23 @@ func (s *sLogin) Login(ctx context.Context, inp *input.AccountLoginInp) (records
 		Role:     []string{"super"},
 	}
 
+	return
+}
+
+func (s *sLogin) UserRoutes(ctx context.Context, code string) (records []input.UserRoutes, err error) {
+	var (
+		//identity = service.Middleware().GetUserIdentity(ctx)
+		options = make([]input.PlatFormModelList, 0)
+		cols    = dao.AuthMenu.Columns()
+	)
+	if options, err = service.PlatForm().Options(ctx); err != nil || len(options) == 0 {
+		g.Log().Warning(ctx, err)
+		return nil, gerror.New("未授权任何平台")
+	}
+	if code == "" {
+		code = options[0].PlatformCode
+	}
+	err = dao.AuthMenu.Ctx(ctx).Where(cols.PlatformCode, code).Scan(&records)
 	return
 }
 

@@ -13,3 +13,10 @@ type ListReq struct {
 type ListRes struct {
 	Records []input.MenuModelList `json:"records"`
 }
+
+type EditReq struct {
+	g.Meta `path:"/menu/edit" method:"post" summary:"编辑菜单"`
+	input.MenuInput
+}
+
+type EditRes struct{}
