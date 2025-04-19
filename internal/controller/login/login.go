@@ -22,3 +22,11 @@ func (s sLogin) Login(ctx context.Context, req *login.AccountLoginReq) (res *log
 	}
 	return
 }
+
+func (s sLogin) Routers(ctx context.Context, req *login.RoutesReq) (res *login.RoutesRes, err error) {
+	records, err := service.Login().UserRoutes(ctx, req.PlatFormCode)
+	res = &login.RoutesRes{
+		UserRoutes: records,
+	}
+	return
+}

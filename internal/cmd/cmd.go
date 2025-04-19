@@ -27,7 +27,7 @@ var (
 				service.Middleware().AuthMiddleware,
 			}...)
 
-			s.Group("/", func(group *ghttp.RouterGroup) {
+			s.Group("/auth", func(group *ghttp.RouterGroup) {
 				group.Bind(
 					login.Login,
 				)
@@ -41,6 +41,7 @@ var (
 			s.Group("/privilege", func(group *ghttp.RouterGroup) {
 				group.Bind(
 					privilege.Menu,
+					privilege.Role,
 				)
 			})
 			s.Run()

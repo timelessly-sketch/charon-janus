@@ -21,7 +21,10 @@ func init() {
 
 func (s *sMenu) List(ctx context.Context, code string) (records []input.MenuModelList, err error) {
 	cols := dao.AuthMenu.Columns()
-	err = dao.AuthMenu.Ctx(ctx).Where(cols.PlatformCode, code).OrderDesc(cols.Order).Scan(&records)
+	if err = dao.AuthMenu.Ctx(ctx).Where(cols.PlatformCode, code).OrderDesc(cols.Order).Scan(&records); err != nil {
+		g.Log().Error(ctx, err)
+		return
+	}
 	return
 }
 
@@ -30,11 +33,13 @@ func (s *sMenu) Edit(ctx context.Context, inp *input.MenuInput) (err error) {
 		cols = dao.AuthMenu.Columns()
 	)
 
-	if err = s.verify(ctx, inp.Id, inp.PlatformCode, g.Map{
+	err = s.verify(ctx, inp.Id, inp.PlatformCode, g.Map{
 		cols.Name:  inp.Name,
 		cols.Path:  inp.Path,
 		cols.Title: inp.Title,
-	}); err != nil {
+	})
+
+	if err != nil {
 		return err
 	}
 

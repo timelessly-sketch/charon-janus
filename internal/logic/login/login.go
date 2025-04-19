@@ -2,6 +2,7 @@ package login
 
 import (
 	"charon-janus/internal/dao"
+	"charon-janus/internal/library/cache"
 	"charon-janus/internal/library/token"
 	"charon-janus/internal/model"
 	"charon-janus/internal/model/entity"
@@ -11,9 +12,13 @@ import (
 	"crypto/sha256"
 	"database/sql"
 	"encoding/hex"
+	"fmt"
+	"github.com/gogf/gf/v2/container/garray"
+	"github.com/gogf/gf/v2/container/gvar"
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/util/gconv"
+	"time"
 )
 
 type sLogin struct{}
@@ -66,21 +71,67 @@ func (s *sLogin) Login(ctx context.Context, inp *input.AccountLoginInp) (records
 	return
 }
 
-func (s *sLogin) UserRoutes(ctx context.Context, code string) (records []input.UserRoutes, err error) {
+func (s *sLogin) UserRoutes(ctx context.Context, code string) (records input.UserRoutes, err error) {
 	var (
-		//identity = service.Middleware().GetUserIdentity(ctx)
-		options = make([]input.PlatFormModelList, 0)
-		cols    = dao.AuthMenu.Columns()
+		identity         = service.Middleware().GetUserIdentity(ctx)
+		menuList         = make([]entity.AuthMenu, 0)
+		menuIDs          = garray.NewIntArray(true)
+		collectParentIDs func(pid int)
+		cols             = dao.AuthMenu.Columns()
 	)
-	if options, err = service.PlatForm().Options(ctx); err != nil || len(options) == 0 {
-		g.Log().Warning(ctx, err)
-		return nil, gerror.New("未授权任何平台")
-	}
 	if code == "" {
+		options, _ := service.PlatForm().Options(ctx)
+		if len(options) == 0 {
+			return records, gerror.New("未授权任何平台")
+		}
 		code = options[0].PlatformCode
 	}
-	err = dao.AuthMenu.Ctx(ctx).Where(cols.PlatformCode, code).Scan(&records)
+	get, err := cache.Instance().Get(ctx, s.LoginCacheKey(code, identity.Id))
+	if err != nil {
+		return
+	}
+	if !get.IsEmpty() {
+		err = gconv.Structs(get, &records.Records)
+		return
+	}
+	err = g.DB().Model("sys_user u").
+		Fields("m.*").Distinct().
+		LeftJoin("sys_auth_roles ar", "u.id = ar.sys_user_id").
+		LeftJoin("auth_role r", "ar.auth_role_id = r.id").
+		LeftJoin("auth_role_menu rm", "r.id = rm.role_id").
+		LeftJoin("auth_menu m", "rm.menu_id = m.id").
+		Where("u.id = ? and m.platform_code = ?", identity.Id, code).Scan(&menuList)
+	if err != nil {
+		return
+	}
+
+	collectParentIDs = func(pid int) {
+		if pid == 0 || menuIDs.Contains(pid) {
+			return
+		}
+		menuIDs.Append(pid)
+		var parent entity.AuthMenu
+		_ = dao.AuthMenu.Ctx(ctx).WherePri(pid).Scan(&parent)
+
+		if parent.Pid != 0 {
+			collectParentIDs(parent.Pid)
+		}
+	}
+	for _, menu := range menuList {
+		menuIDs.Append(menu.Id)
+		if menu.Pid != 0 {
+			collectParentIDs(menu.Pid)
+		}
+	}
+	if err = dao.AuthMenu.Ctx(ctx).WhereIn(cols.Id, gvar.New(menuIDs).Ints()).Scan(&records.Records); err != nil {
+		return
+	}
+	err = cache.Instance().Set(ctx, s.LoginCacheKey(code, identity.Id), records.Records, 8*24*time.Hour)
 	return
+}
+
+func (s *sLogin) LoginCacheKey(code string, id int) (key string) {
+	return fmt.Sprintf("Login_meun:%s:%d", code, id)
 }
 
 func (s *sLogin) generatePassword(password, ipa string) string {

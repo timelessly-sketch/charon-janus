@@ -19,5 +19,5 @@ type LoginModel struct {
 }
 
 type UserRoutes struct {
-	entity.AuthMenu
+	Records []entity.AuthMenu `json:"records"`
 }
