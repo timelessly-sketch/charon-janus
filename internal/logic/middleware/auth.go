@@ -22,9 +22,9 @@ func init() {
 
 func (m *sMiddleware) AuthMiddleware(r *ghttp.Request) {
 	var (
-		handler = r.GetServeHandler()
-		//method       = r.Method
-		//apiNotAuth   = g.Map{"code": http.StatusForbidden, "message": "接口未授权"}
+		handler      = r.GetServeHandler()
+		method       = r.Method
+		apiNotAuth   = g.Map{"code": http.StatusForbidden, "message": "接口未授权"}
 		tokenMiss    = g.Map{"code": http.StatusUnauthorized, "message": "token缺失"}
 		tokenInvalid = g.Map{"code": http.StatusUnauthorized, "message": "token解析异常"}
 	)
@@ -45,12 +45,17 @@ func (m *sMiddleware) AuthMiddleware(r *ghttp.Request) {
 		r.Response.WriteStatusExit(http.StatusUnauthorized, tokenInvalid)
 		return
 	}
-	//path, key := consts.BuildPathMethod(handler.Handler.Router.Uri, method), cache.BuildRole(claims.RoleName)
-	//value, _ := cache.Instance().Get(r.Context(), key)
-	//if k, ok := value.Map()[path]; !gconv.Bool(k) || !ok {
-	//	r.Response.WriteStatusExit(http.StatusOK, apiNotAuth)
-	//	return
-	//}
+
+	flag, err := service.Api().AuthRoleApi(r.Context(), claims.Id, handler.Handler.Router.Uri, method)
+	if err != nil {
+		g.Log().Error(r.Context(), err.Error())
+		r.Response.WriteStatusExit(http.StatusInternalServerError)
+		return
+	}
+	if !flag {
+		r.Response.WriteStatusExit(http.StatusOK, apiNotAuth)
+		return
+	}
 
 	r.SetCtxVar("user", claims.Identity)
 	r.Middleware.Next()

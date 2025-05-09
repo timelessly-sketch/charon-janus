@@ -16,7 +16,7 @@ type ListRes struct {
 }
 
 type DetailReq struct {
-	g.Meta `path:"/system/user/detail/{id}" method:"get" summary:"获取用户详情"`
+	g.Meta `path:"/system/user/detail/:id" method:"get" summary:"获取用户详情"`
 	Id     int `json:"id" v:"required#用户ID缺失"`
 }
 type DetailRes struct {

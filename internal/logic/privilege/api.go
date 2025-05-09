@@ -1,9 +1,7 @@
 package privilege
 
 import (
-	"charon-janus/internal/consts"
 	"charon-janus/internal/dao"
-	"charon-janus/internal/library/cache"
 	"charon-janus/internal/model/entity"
 	"charon-janus/internal/model/input"
 	"charon-janus/internal/service"
@@ -13,6 +11,7 @@ import (
 	"github.com/gogf/gf/v2/database/gdb"
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/os/gtime"
 )
 
 type sApi struct{}
@@ -47,10 +46,8 @@ func (s *sApi) Edit(ctx context.Context, inp input.ApiInput) (err error) {
 		return
 	}
 	err = g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) (err error) {
-		if _, err = dao.AuthApi.Ctx(ctx).WherePri(inp.Id).Data(&inp).Update(); err != nil {
-			return err
-		}
-		return cache.RemoveByPrefix(ctx, consts.LoginApi)
+		_, err = dao.AuthApi.Ctx(ctx).WherePri(inp.Id).Data(&inp).Update()
+		return
 	})
 	return
 }
@@ -114,5 +111,18 @@ func (s *sApi) RoleApiEdit(ctx context.Context, apiIds []int, roleId int) (err e
 	if len(addedMenu) > 0 {
 		_, err = dao.AuthRoleApi.Ctx(ctx).Data(&apiList).Insert()
 	}
-	return
+
+	return g.DB().GetCore().ClearCache(ctx, dao.SysAuthRoles.Table())
+}
+
+func (s *sApi) AuthRoleApi(ctx context.Context, userId int, path, method string) (bool, error) {
+	count, err := dao.SysAuthRoles.Ctx(ctx).As("ar").
+		LeftJoin(dao.AuthRoleApi.Table(), "ra", "ar.auth_role_id = ra.role_id").
+		LeftJoin(dao.AuthApi.Table(), "a", "ra.api_id = a.id").
+		Where("ar.sys_user_id", userId).Where("a.path", path).Where("a.method", method).
+		Cache(gdb.CacheOption{
+			Duration: 7 * gtime.D,
+			Force:    false,
+		}).Count()
+	return count > 0, err
 }

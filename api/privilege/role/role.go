@@ -22,7 +22,7 @@ type EditReq struct {
 type EditRes struct{}
 
 type DetailReq struct {
-	g.Meta `path:"/privilege/role/detail/{id}" method:"get" summary:"获取当前规则详情"`
+	g.Meta `path:"/privilege/role/detail/:id" method:"get" summary:"获取当前规则详情"`
 	Id     int `json:"id" v:"required#规则ID缺失"`
 }
 

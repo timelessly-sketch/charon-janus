@@ -11,72 +11,78 @@ import (
 	"github.com/gogf/gf/v2/frame/g"
 )
 
-// AuthRoleDao is the data access object for the table auth_role.
-type AuthRoleDao struct {
+// AuthApiDao is the data access object for the table auth_api.
+type AuthApiDao struct {
 	table    string             // table is the underlying table name of the DAO.
 	group    string             // group is the database configuration group name of the current DAO.
-	columns  AuthRoleColumns    // columns contains all the column names of Table for convenient usage.
+	columns  AuthApiColumns     // columns contains all the column names of Table for convenient usage.
 	handlers []gdb.ModelHandler // handlers for customized model modification.
 }
 
-// AuthRoleColumns defines and stores column names for the table auth_role.
-type AuthRoleColumns struct {
-	Id           string //
-	RoleName     string // 角色名
-	RoleKey      string // 角色编码
-	RoleSort     string // 排序
-	PlatformCode string // 平台编码
-	Status       string // 状态 1 - 开启 2 - 关闭
-	CreatedAt    string // 删除时间
+// AuthApiColumns defines and stores column names for the table auth_api.
+type AuthApiColumns struct {
+	Id           string // 接口ID
+	Pid          string // 接口PID
+	Name         string // 接口名
+	Icon         string // 图标
+	Title        string // 标题
+	Path         string // 接口路径
+	Method       string // 接口方法-目录为空,接口不能为空
+	ApiType      string // 接口或者目录
+	PlatformCode string // 平台标识
+	CreatedAt    string // 创建时间
 	UpdatedAt    string // 更新时间
 	DeletedAt    string // 删除时间
 }
 
-// authRoleColumns holds the columns for the table auth_role.
-var authRoleColumns = AuthRoleColumns{
+// authApiColumns holds the columns for the table auth_api.
+var authApiColumns = AuthApiColumns{
 	Id:           "id",
-	RoleName:     "role_name",
-	RoleKey:      "role_key",
-	RoleSort:     "role_sort",
+	Pid:          "pid",
+	Name:         "name",
+	Icon:         "icon",
+	Title:        "title",
+	Path:         "path",
+	Method:       "method",
+	ApiType:      "api_type",
 	PlatformCode: "platform_code",
-	Status:       "status",
 	CreatedAt:    "created_at",
 	UpdatedAt:    "updated_at",
 	DeletedAt:    "deleted_at",
 }
 
-// NewAuthRoleDao creates and returns a new DAO object for table data access.
-func NewAuthRoleDao(handlers ...gdb.ModelHandler) *AuthRoleDao {
-	return &AuthRoleDao{
+// NewAuthApiDao creates and returns a new DAO object for table data access.
+func NewAuthApiDao(handlers ...gdb.ModelHandler) *AuthApiDao {
+	return &AuthApiDao{
 		group:    "default",
-		table:    "auth_role",
-		columns:  authRoleColumns,
+		table:    "auth_api",
+		columns:  authApiColumns,
 		handlers: handlers,
 	}
 }
 
 // DB retrieves and returns the underlying raw database management object of the current DAO.
-func (dao *AuthRoleDao) DB() gdb.DB {
+func (dao *AuthApiDao) DB() gdb.DB {
 	return g.DB(dao.group)
 }
 
 // Table returns the table name of the current DAO.
-func (dao *AuthRoleDao) Table() string {
+func (dao *AuthApiDao) Table() string {
 	return dao.table
 }
 
 // Columns returns all column names of the current DAO.
-func (dao *AuthRoleDao) Columns() AuthRoleColumns {
+func (dao *AuthApiDao) Columns() AuthApiColumns {
 	return dao.columns
 }
 
 // Group returns the database configuration group name of the current DAO.
-func (dao *AuthRoleDao) Group() string {
+func (dao *AuthApiDao) Group() string {
 	return dao.group
 }
 
 // Ctx creates and returns a Model for the current DAO. It automatically sets the context for the current operation.
-func (dao *AuthRoleDao) Ctx(ctx context.Context) *gdb.Model {
+func (dao *AuthApiDao) Ctx(ctx context.Context) *gdb.Model {
 	model := dao.DB().Model(dao.table)
 	for _, handler := range dao.handlers {
 		model = handler(model)
@@ -90,6 +96,6 @@ func (dao *AuthRoleDao) Ctx(ctx context.Context) *gdb.Model {
 //
 // Note: Do not commit or roll back the transaction in function f,
 // as it is automatically handled by this function.
-func (dao *AuthRoleDao) Transaction(ctx context.Context, f func(ctx context.Context, tx gdb.TX) error) (err error) {
+func (dao *AuthApiDao) Transaction(ctx context.Context, f func(ctx context.Context, tx gdb.TX) error) (err error) {
 	return dao.Ctx(ctx).Transaction(ctx, f)
 }

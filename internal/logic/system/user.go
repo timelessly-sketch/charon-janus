@@ -85,8 +85,7 @@ func (s *sUser) Edit(ctx context.Context, inp *input.UserEditInput) (err error) 
 			return
 		})
 	}
-	array, err := g.DB().Model("sys_user u").
-		Fields("r.id").
+	array, err := dao.SysUser.Ctx(ctx).As("u").Fields("r.id").
 		LeftJoin("sys_auth_roles ar", "u.id = ar.sys_user_id").
 		LeftJoin("auth_role r", "ar.auth_role_id = r.id").
 		Where("u.id = ?", inp.Id).Array()
@@ -102,6 +101,7 @@ func (s *sUser) Edit(ctx context.Context, inp *input.UserEditInput) (err error) 
 			PlatformCode: gvar.New(code).String(),
 		})
 	}
+
 	return g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) (err error) {
 		if _, err = dao.SysUser.Ctx(ctx).WherePri(inp.Id).Data(&inp.SysUser).Update(); err != nil {
 			return

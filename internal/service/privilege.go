@@ -16,6 +16,7 @@ type (
 		Edit(ctx context.Context, inp input.ApiInput) (err error)
 		DetailApi(ctx context.Context, code string, id int) (records []input.ApiModelList, ids []int)
 		RoleApiEdit(ctx context.Context, apiIds []int, roleId int) (err error)
+		AuthRoleApi(ctx context.Context, userId int, path string, method string) (flag bool, err error)
 	}
 	IMenu interface {
 		List(ctx context.Context, code string) (records []input.MenuModelList, err error)

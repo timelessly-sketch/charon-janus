@@ -16,7 +16,6 @@ type AuthRole struct {
 	RoleSort     int         `json:"roleSort"     orm:"role_sort"     description:"排序"`               // 排序
 	PlatformCode string      `json:"platformCode" orm:"platform_code" description:"平台编码"`             // 平台编码
 	Status       int         `json:"status"       orm:"status"        description:"状态 1 - 开启 2 - 关闭"` // 状态 1 - 开启 2 - 关闭
-	CreatedBy    string      `json:"createdBy"    orm:"created_by"    description:"创建者"`              // 创建者
 	CreatedAt    *gtime.Time `json:"createdAt"    orm:"created_at"    description:"删除时间"`             // 删除时间
 	UpdatedAt    *gtime.Time `json:"updatedAt"    orm:"updated_at"    description:"更新时间"`             // 更新时间
 	DeletedAt    *gtime.Time `json:"deletedAt"    orm:"deleted_at"    description:"删除时间"`             // 删除时间

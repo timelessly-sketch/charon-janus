@@ -62,7 +62,7 @@ func (s *sPlatForm) Options(ctx context.Context) (records []input.PlatFormModelL
 		Where(dao.SysPlatform.Columns().Status, 1).
 		Cache(gdb.CacheOption{
 			Duration: 10 * time.Minute,
-			Force:    true,
+			Force:    false,
 		}).Scan(&records); err != nil {
 		return
 	}

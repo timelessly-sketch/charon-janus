@@ -1,7 +1,6 @@
 package login
 
 import (
-	"charon-janus/internal/consts"
 	"charon-janus/internal/dao"
 	"charon-janus/internal/library/cache"
 	"charon-janus/internal/library/token"
@@ -92,7 +91,7 @@ func (s *sLogin) UserRoutes(ctx context.Context, code string) (records input.Use
 		}
 		code = options[0].PlatformCode
 	}
-	get, err := cache.Instance().Get(ctx, s.LoginCacheKey(code, identity.Id))
+	get, err := cache.Instance().Get(ctx, s.LoginMenuCacheKey(code, identity.Id))
 	if err != nil {
 		return
 	}
@@ -132,12 +131,12 @@ func (s *sLogin) UserRoutes(ctx context.Context, code string) (records input.Use
 	if err = dao.AuthMenu.Ctx(ctx).OrderAsc(cols.Order).WhereIn(cols.Id, gvar.New(menuIDs).Ints()).Scan(&records.Records); err != nil {
 		return
 	}
-	err = cache.Instance().Set(ctx, s.LoginCacheKey(code, identity.Id), records.Records, 8*24*time.Hour)
+	err = cache.Instance().Set(ctx, s.LoginMenuCacheKey(code, identity.Id), records.Records, 8*24*time.Hour)
 	return
 }
 
-func (s *sLogin) LoginCacheKey(code string, id int) (key string) {
-	return fmt.Sprintf("%s:%s:%d", consts.LoginMenu, code, id)
+func (s *sLogin) LoginMenuCacheKey(code string, id int) (key string) {
+	return fmt.Sprintf("%s:%s:%d", "Login_menu", code, id)
 }
 
 func (s *sLogin) generatePassword(password, ipa string) string {

@@ -1,7 +1,6 @@
 package privilege
 
 import (
-	"charon-janus/internal/consts"
 	"charon-janus/internal/dao"
 	"charon-janus/internal/library/cache"
 	"charon-janus/internal/model/entity"
@@ -57,7 +56,7 @@ func (s *sMenu) Edit(ctx context.Context, inp *input.MenuInput) (err error) {
 		if _, err = dao.AuthMenu.Ctx(ctx).WherePri(inp.Id).Data(&inp.AuthMenu).Update(); err != nil {
 			return err
 		}
-		return cache.RemoveByPrefix(ctx, consts.LoginMenu)
+		return cache.RemoveByPrefix(ctx, "Login_menu")
 	})
 	return
 }
@@ -118,5 +117,5 @@ func (s *sMenu) RoleMenuEdit(ctx context.Context, menuIds []int, roleId int) (er
 	if len(addedMenu) > 0 {
 		_, err = dao.AuthRoleMenu.Ctx(ctx).Data(&menuList).Insert()
 	}
-	return
+	return cache.RemoveByPrefix(ctx, "Login_menu")
 }
