@@ -11,9 +11,17 @@ import (
 )
 
 type (
+	IApi interface {
+		List(ctx context.Context, code string) (records []input.ApiModelList, err error)
+		Edit(ctx context.Context, inp input.ApiInput) (err error)
+		DetailApi(ctx context.Context, code string, id int) (records []input.ApiModelList, ids []int)
+		RoleApiEdit(ctx context.Context, apiIds []int, roleId int) (err error)
+	}
 	IMenu interface {
 		List(ctx context.Context, code string) (records []input.MenuModelList, err error)
 		Edit(ctx context.Context, inp *input.MenuInput) (err error)
+		DetailMenu(ctx context.Context, code string, id int) (records []input.MenuModelList, ids []int)
+		RoleMenuEdit(ctx context.Context, menuIds []int, roleId int) (err error)
 	}
 	IRole interface {
 		List(ctx context.Context, code string) (records []input.RoleModelList, err error)
@@ -23,9 +31,21 @@ type (
 )
 
 var (
+	localApi  IApi
 	localMenu IMenu
 	localRole IRole
 )
+
+func Api() IApi {
+	if localApi == nil {
+		panic("implement not found for interface IApi, forgot register?")
+	}
+	return localApi
+}
+
+func RegisterApi(i IApi) {
+	localApi = i
+}
 
 func Menu() IMenu {
 	if localMenu == nil {

@@ -6,7 +6,7 @@ import (
 )
 
 type ListReq struct {
-	g.Meta       `path:"/role/list" method:"GET" summary:"角色列表"`
+	g.Meta       `path:"/privilege/role/list" method:"GET" summary:"角色列表"`
 	PlatFormCode string `json:"platFormCode"`
 }
 
@@ -15,14 +15,14 @@ type ListRes struct {
 }
 
 type EditReq struct {
-	g.Meta `path:"/role/edit" method:"POST" summary:"编辑角色"`
+	g.Meta `path:"/privilege/role/edit" method:"POST" summary:"编辑角色"`
 	input.RoleEditInput
 }
 
 type EditRes struct{}
 
 type DetailReq struct {
-	g.Meta `path:"/role/detail/{id}" method:"get" summary:"获取当前规则详情"`
+	g.Meta `path:"/privilege/role/detail/{id}" method:"get" summary:"获取当前规则详情"`
 	Id     int `json:"id" v:"required#规则ID缺失"`
 }
 

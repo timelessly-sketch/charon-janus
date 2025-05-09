@@ -6,7 +6,7 @@ import (
 )
 
 type AccountLoginReq struct {
-	g.Meta `path:"/login" method:"post" summary:"登录" noAuth:"true"`
+	g.Meta `path:"/auth/login" method:"post" summary:"登录" noAuth:"true"`
 	input.AccountLoginInp
 }
 
@@ -15,7 +15,7 @@ type AccountLoginRes struct {
 }
 
 type RoutesReq struct {
-	g.Meta       `path:"/routes" method:"get" summary:"获取用户权限"`
+	g.Meta       `path:"/auth/routes" method:"get" summary:"获取用户权限"`
 	PlatFormCode string `json:"platformCode"`
 }
 

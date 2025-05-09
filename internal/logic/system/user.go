@@ -5,6 +5,7 @@ import (
 	"charon-janus/internal/model/entity"
 	"charon-janus/internal/model/input"
 	"charon-janus/internal/service"
+	"charon-janus/utility/convert"
 	"context"
 	"crypto/sha256"
 	"encoding/hex"
@@ -57,8 +58,9 @@ func (s *sUser) Detail(ctx context.Context, id int) (records input.UserModelDeta
 
 func (s *sUser) Edit(ctx context.Context, inp *input.UserEditInput) (err error) {
 	var (
-		cols     = dao.SysUser.Columns()
-		authList = make([]entity.SysAuthRoles, 0)
+		cols         = dao.SysUser.Columns()
+		authRoleCols = dao.SysAuthRoles.Columns()
+		authList     = make([]entity.SysAuthRoles, 0)
 	)
 
 	if err = s.verify(ctx, inp.Id, g.Map{
@@ -70,14 +72,6 @@ func (s *sUser) Edit(ctx context.Context, inp *input.UserEditInput) (err error) 
 		return err
 	}
 
-	for _, id := range inp.RoleIds {
-		code, _ := dao.AuthRole.Ctx(ctx).Fields(dao.AuthMenu.Columns().PlatformCode).WherePri(id).Value()
-		authList = append(authList, entity.SysAuthRoles{
-			SysUserId:    inp.Id,
-			AuthRoleId:   id,
-			PlatformCode: gvar.New(code).String(),
-		})
-	}
 	if inp.Id == 0 {
 		return g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) (err error) {
 			if _, err = dao.SysUser.Ctx(ctx).OmitEmpty().Data(&inp.SysUser).Insert(); err != nil {
@@ -91,18 +85,34 @@ func (s *sUser) Edit(ctx context.Context, inp *input.UserEditInput) (err error) 
 			return
 		})
 	}
-
+	array, err := g.DB().Model("sys_user u").
+		Fields("r.id").
+		LeftJoin("sys_auth_roles ar", "u.id = ar.sys_user_id").
+		LeftJoin("auth_role r", "ar.auth_role_id = r.id").
+		Where("u.id = ?", inp.Id).Array()
+	if err != nil {
+		return
+	}
+	added, removed := convert.Contrast(gvar.New(array).Ints(), inp.RoleIds)
+	for _, id := range added {
+		code, _ := dao.AuthRole.Ctx(ctx).Fields(dao.AuthMenu.Columns().PlatformCode).WherePri(id).Value()
+		authList = append(authList, entity.SysAuthRoles{
+			SysUserId:    inp.Id,
+			AuthRoleId:   id,
+			PlatformCode: gvar.New(code).String(),
+		})
+	}
 	return g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) (err error) {
 		if _, err = dao.SysUser.Ctx(ctx).WherePri(inp.Id).Data(&inp.SysUser).Update(); err != nil {
 			return
 		}
-		if _, err = dao.SysAuthRoles.Ctx(ctx).Where(dao.SysAuthRoles.Columns().SysUserId, inp.Id).Delete(); err != nil {
-			return
-		}
-		if len(authList) > 0 {
-			if _, err = dao.SysAuthRoles.Ctx(ctx).Data(authList).Insert(); err != nil {
+		if len(removed) > 0 {
+			if _, err = dao.SysAuthRoles.Ctx(ctx).Where(authRoleCols.SysUserId, inp.Id).WhereIn(authRoleCols.AuthRoleId, removed).Delete(); err != nil {
 				return err
 			}
+		}
+		if len(added) > 0 {
+			_, err = dao.SysAuthRoles.Ctx(ctx).Data(&authList).Insert()
 		}
 		return
 	})

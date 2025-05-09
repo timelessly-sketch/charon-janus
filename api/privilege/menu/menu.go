@@ -6,7 +6,7 @@ import (
 )
 
 type ListReq struct {
-	g.Meta       `path:"/menu/list" method:"GET" summary:"获取菜单列表"`
+	g.Meta       `path:"/privilege/menu/list" method:"GET" summary:"获取菜单列表"`
 	PlatFormCode string `json:"platForm_code"`
 }
 
@@ -15,7 +15,7 @@ type ListRes struct {
 }
 
 type EditReq struct {
-	g.Meta `path:"/menu/edit" method:"post" summary:"编辑菜单"`
+	g.Meta `path:"/privilege/menu/edit" method:"post" summary:"编辑菜单"`
 	input.MenuInput
 }
 

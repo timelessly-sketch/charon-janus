@@ -6,7 +6,7 @@ import (
 )
 
 type ListReq struct {
-	g.Meta `path:"user/list" method:"get" summary:"获取用户列表"`
+	g.Meta `path:"/system/user/list" method:"get" summary:"获取用户列表"`
 	input.UserInput
 }
 
@@ -16,7 +16,7 @@ type ListRes struct {
 }
 
 type DetailReq struct {
-	g.Meta `path:"/user/detail/{id}" method:"get" summary:"获取用户详情"`
+	g.Meta `path:"/system/user/detail/{id}" method:"get" summary:"获取用户详情"`
 	Id     int `json:"id" v:"required#用户ID缺失"`
 }
 type DetailRes struct {
@@ -24,13 +24,13 @@ type DetailRes struct {
 }
 
 type EditReq struct {
-	g.Meta `path:"/user/edit" method:"post" summary:"编辑用户"`
+	g.Meta `path:"/system/user/edit" method:"post" summary:"编辑用户"`
 	input.UserEditInput
 }
 type EditRes struct{}
 
 type ResetReq struct {
-	g.Meta   `path:"/user/reset" method:"post" summary:"重置密码"`
+	g.Meta   `path:"/system/user/reset" method:"post" summary:"重置密码"`
 	Username string `json:"Username" v:"required#用户名缺失"`
 }
 

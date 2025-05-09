@@ -4,6 +4,8 @@ import (
 	"context"
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/os/gcache"
+	"github.com/gogf/gf/v2/util/gconv"
+	"strings"
 )
 
 var cache *gcache.Cache
@@ -30,4 +32,18 @@ func SetAdapter(ctx context.Context) {
 	cache = gcache.New()
 	cache.SetAdapter(adapter)
 	g.Log().Info(ctx, "cache initialized")
+}
+
+func RemoveByPrefix(ctx context.Context, prefix string) (err error) {
+	keys, err := cache.Keys(ctx)
+	if err != nil {
+		return
+	}
+	for _, v := range keys {
+		key := gconv.String(v)
+		if strings.HasPrefix(key, prefix) {
+			_, _ = cache.Remove(ctx, key)
+		}
+	}
+	return nil
 }

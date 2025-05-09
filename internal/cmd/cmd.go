@@ -27,21 +27,14 @@ var (
 				service.Middleware().AuthMiddleware,
 			}...)
 
-			s.Group("/auth", func(group *ghttp.RouterGroup) {
+			s.Group("/", func(group *ghttp.RouterGroup) {
 				group.Bind(
 					login.Login,
-				)
-			})
-			s.Group("/system", func(group *ghttp.RouterGroup) {
-				group.Bind(
 					system.PlatForm,
 					system.User,
-				)
-			})
-			s.Group("/privilege", func(group *ghttp.RouterGroup) {
-				group.Bind(
 					privilege.Menu,
 					privilege.Role,
+					privilege.Api,
 				)
 			})
 			s.Run()

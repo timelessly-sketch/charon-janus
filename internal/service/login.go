@@ -14,6 +14,7 @@ type (
 	ILogin interface {
 		Login(ctx context.Context, inp *input.AccountLoginInp) (records input.LoginModel, err error)
 		UserRoutes(ctx context.Context, code string) (records input.UserRoutes, err error)
+		LoginCacheKey(code string, id int) (key string)
 	}
 )
 

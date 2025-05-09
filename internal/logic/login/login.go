@@ -1,6 +1,7 @@
 package login
 
 import (
+	"charon-janus/internal/consts"
 	"charon-janus/internal/dao"
 	"charon-janus/internal/library/cache"
 	"charon-janus/internal/library/token"
@@ -58,6 +59,11 @@ func (s *sLogin) Login(ctx context.Context, inp *input.AccountLoginInp) (records
 		g.Log().Warning(ctx, err)
 		return
 	}
+	array, err := g.DB().Model("sys_auth_roles sa").Fields("r.role_key").LeftJoin("auth_role r", "sa.auth_role_id = r.id").Where("sa.sys_user_id = ?", user.Id).Array()
+	if err != nil {
+		g.Log().Warning(ctx, err)
+		return records, gerror.New("获取权限失败")
+	}
 	records = input.LoginModel{
 		Id:       user.Id,
 		Avatar:   user.AvatarUrl,
@@ -65,7 +71,7 @@ func (s *sLogin) Login(ctx context.Context, inp *input.AccountLoginInp) (records
 		Nickname: user.NickName,
 		Name:     user.Name,
 		Token:    generateJWT,
-		Role:     []string{"super"},
+		Role:     gconv.Strings(array),
 	}
 
 	return
@@ -123,7 +129,7 @@ func (s *sLogin) UserRoutes(ctx context.Context, code string) (records input.Use
 			collectParentIDs(menu.Pid)
 		}
 	}
-	if err = dao.AuthMenu.Ctx(ctx).WhereIn(cols.Id, gvar.New(menuIDs).Ints()).Scan(&records.Records); err != nil {
+	if err = dao.AuthMenu.Ctx(ctx).OrderAsc(cols.Order).WhereIn(cols.Id, gvar.New(menuIDs).Ints()).Scan(&records.Records); err != nil {
 		return
 	}
 	err = cache.Instance().Set(ctx, s.LoginCacheKey(code, identity.Id), records.Records, 8*24*time.Hour)
@@ -131,7 +137,7 @@ func (s *sLogin) UserRoutes(ctx context.Context, code string) (records input.Use
 }
 
 func (s *sLogin) LoginCacheKey(code string, id int) (key string) {
-	return fmt.Sprintf("Login_meun:%s:%d", code, id)
+	return fmt.Sprintf("%s:%s:%d", consts.LoginMenu, code, id)
 }
 
 func (s *sLogin) generatePassword(password, ipa string) string {

@@ -6,7 +6,7 @@ import (
 )
 
 type ListReq struct {
-	g.Meta `path:"/platform/list" method:"get" summary:"获取平台列表"`
+	g.Meta `path:"/system/platform/list" method:"get" summary:"获取平台列表"`
 	input.PageReq
 }
 
@@ -16,14 +16,14 @@ type ListRes struct {
 }
 
 type EditReq struct {
-	g.Meta `path:"platform/edit" method:"post" summary:"编辑平台"`
+	g.Meta `path:"/system/platform/edit" method:"post" summary:"编辑平台"`
 	input.PlatFormEditInput
 }
 
 type EditRes struct{}
 
 type OptionsReq struct {
-	g.Meta `path:"platform/options" method:"get" summary:"获取用户平台权限"`
+	g.Meta `path:"/system/platform/options" method:"get" summary:"获取用户平台权限"`
 }
 
 type OptionsRes struct {

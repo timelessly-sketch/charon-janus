@@ -25,6 +25,7 @@ type AuthRoleMenuColumns struct {
 	MenuId    string // 菜单ID
 	CreatedAt string // 创建时间
 	UpdatedAt string // 更新时间
+	DeletedAt string // 删除时间
 }
 
 // authRoleMenuColumns holds the columns for the table auth_role_menu.
@@ -33,6 +34,7 @@ var authRoleMenuColumns = AuthRoleMenuColumns{
 	MenuId:    "menu_id",
 	CreatedAt: "created_at",
 	UpdatedAt: "updated_at",
+	DeletedAt: "deleted_at",
 }
 
 // NewAuthRoleMenuDao creates and returns a new DAO object for table data access.

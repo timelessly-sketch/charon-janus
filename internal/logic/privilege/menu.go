@@ -1,10 +1,16 @@
 package privilege
 
 import (
+	"charon-janus/internal/consts"
 	"charon-janus/internal/dao"
+	"charon-janus/internal/library/cache"
+	"charon-janus/internal/model/entity"
 	"charon-janus/internal/model/input"
 	"charon-janus/internal/service"
+	"charon-janus/utility/convert"
 	"context"
+	"github.com/gogf/gf/v2/container/gvar"
+	"github.com/gogf/gf/v2/database/gdb"
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
 )
@@ -21,7 +27,7 @@ func init() {
 
 func (s *sMenu) List(ctx context.Context, code string) (records []input.MenuModelList, err error) {
 	cols := dao.AuthMenu.Columns()
-	if err = dao.AuthMenu.Ctx(ctx).Where(cols.PlatformCode, code).OrderDesc(cols.Order).Scan(&records); err != nil {
+	if err = dao.AuthMenu.Ctx(ctx).Where(cols.PlatformCode, code).OrderAsc(cols.Order).Scan(&records); err != nil {
 		g.Log().Error(ctx, err)
 		return
 	}
@@ -47,7 +53,12 @@ func (s *sMenu) Edit(ctx context.Context, inp *input.MenuInput) (err error) {
 		_, err = dao.AuthMenu.Ctx(ctx).Data(&inp.AuthMenu).Insert()
 		return
 	}
-	_, err = dao.AuthMenu.Ctx(ctx).WherePri(inp.Id).Data(&inp.AuthMenu).Update()
+	err = g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) (err error) {
+		if _, err = dao.AuthMenu.Ctx(ctx).WherePri(inp.Id).Data(&inp.AuthMenu).Update(); err != nil {
+			return err
+		}
+		return cache.RemoveByPrefix(ctx, consts.LoginMenu)
+	})
 	return
 }
 
@@ -69,6 +80,43 @@ func (s *sMenu) verify(ctx context.Context, id int, code string, scoreMap g.Map)
 		if count > 0 {
 			return gerror.New(msgMap[k])
 		}
+	}
+	return
+}
+
+func (s *sMenu) DetailMenu(ctx context.Context, code string, id int) (records []input.MenuModelList, ids []int) {
+	var (
+		cols     = dao.AuthMenu.Columns()
+		colsMenu = dao.AuthRoleMenu.Columns()
+	)
+
+	_ = dao.AuthMenu.Ctx(ctx).Where(cols.PlatformCode, code).OrderAsc(cols.Order).Scan(&records)
+	array, _ := dao.AuthRoleMenu.Ctx(ctx).Fields(colsMenu.MenuId).Where(colsMenu.RoleId, id).Array()
+
+	return records, gvar.New(array).Ints()
+}
+
+func (s *sMenu) RoleMenuEdit(ctx context.Context, menuIds []int, roleId int) (err error) {
+	var (
+		colsMenu = dao.AuthRoleMenu.Columns()
+		menuList = make([]entity.AuthRoleMenu, 0)
+	)
+
+	array, _ := dao.AuthRoleMenu.Ctx(ctx).Fields(colsMenu.MenuId).Where(colsMenu.RoleId, roleId).Array()
+	addedMenu, removedMenu := convert.Contrast(gvar.New(array).Ints(), menuIds)
+	for _, id := range addedMenu {
+		menuList = append(menuList, entity.AuthRoleMenu{
+			RoleId: roleId,
+			MenuId: id,
+		})
+	}
+	if len(removedMenu) > 0 {
+		if _, err = dao.AuthRoleMenu.Ctx(ctx).Where(colsMenu.RoleId, roleId).WhereIn(colsMenu.MenuId, removedMenu).Delete(); err != nil {
+			return
+		}
+	}
+	if len(addedMenu) > 0 {
+		_, err = dao.AuthRoleMenu.Ctx(ctx).Data(&menuList).Insert()
 	}
 	return
 }
