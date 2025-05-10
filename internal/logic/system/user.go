@@ -74,13 +74,11 @@ func (s *sUser) Edit(ctx context.Context, inp *input.UserEditInput) (err error) 
 
 	if inp.Id == 0 {
 		return g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) (err error) {
-			if _, err = dao.SysUser.Ctx(ctx).OmitEmpty().Data(&inp.SysUser).Insert(); err != nil {
-				return err
+			if _, err = dao.SysUser.Ctx(ctx).OmitEmpty().Data(&inp).Insert(); err != nil {
+				return
 			}
 			if len(authList) > 0 {
-				if _, err = dao.SysAuthRoles.Ctx(ctx).Data(authList).Insert(); err != nil {
-					return err
-				}
+				_, err = dao.SysAuthRoles.Ctx(ctx).Data(authList).Insert()
 			}
 			return
 		})
@@ -103,7 +101,7 @@ func (s *sUser) Edit(ctx context.Context, inp *input.UserEditInput) (err error) 
 	}
 
 	return g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) (err error) {
-		if _, err = dao.SysUser.Ctx(ctx).WherePri(inp.Id).Data(&inp.SysUser).Update(); err != nil {
+		if _, err = dao.SysUser.Ctx(ctx).WherePri(inp.Id).Data(&inp).Update(); err != nil {
 			return
 		}
 		if len(removed) > 0 {

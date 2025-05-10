@@ -16,6 +16,7 @@ type (
 	IMiddleware interface {
 		AuthMiddleware(r *ghttp.Request)
 		GetUserIdentity(ctx context.Context) (user model.Identity)
+		ProxyPlatform(r *ghttp.Request)
 	}
 )
 

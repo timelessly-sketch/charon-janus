@@ -42,14 +42,19 @@ func (s *sApi) Edit(ctx context.Context, inp input.ApiInput) (err error) {
 	}
 
 	if inp.Id == 0 {
-		_, err = dao.AuthApi.Ctx(ctx).Data(&inp).Insert()
-		return
+		if _, err = dao.AuthApi.Ctx(ctx).Data(&inp).Insert(); err != nil {
+			return
+		}
+	} else {
+		err = g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) (err error) {
+			_, err = dao.AuthApi.Ctx(ctx).WherePri(inp.Id).Data(&inp).Update()
+			return
+		})
+		if err != nil {
+			return
+		}
 	}
-	err = g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) (err error) {
-		_, err = dao.AuthApi.Ctx(ctx).WherePri(inp.Id).Data(&inp).Update()
-		return
-	})
-	return
+	return g.DB().GetCore().ClearCache(ctx, dao.AuthApi.Table())
 }
 
 func (s *sApi) verify(ctx context.Context, id int, code string, scoreMap g.Map) (err error) {

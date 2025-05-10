@@ -6,6 +6,7 @@
 package service
 
 import (
+	"charon-janus/internal/model/entity"
 	"charon-janus/internal/model/input"
 	"context"
 )
@@ -15,6 +16,7 @@ type (
 		List(ctx context.Context, inp *input.PageReq) (records []input.PlatFormModelList, total int, err error)
 		Edit(ctx context.Context, inp *input.PlatFormEditInput) (err error)
 		Options(ctx context.Context) (records []input.PlatFormModelList, err error)
+		ProxyPath(ctx context.Context, path string, method string) (record entity.SysPlatform, err error)
 	}
 	IUser interface {
 		List(ctx context.Context, inp *input.UserInput) (records []input.UserModelList, total int, err error)

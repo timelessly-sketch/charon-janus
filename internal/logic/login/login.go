@@ -131,6 +131,7 @@ func (s *sLogin) UserRoutes(ctx context.Context, code string) (records input.Use
 	if err = dao.AuthMenu.Ctx(ctx).OrderAsc(cols.Order).WhereIn(cols.Id, gvar.New(menuIDs).Ints()).Scan(&records.Records); err != nil {
 		return
 	}
+
 	err = cache.Instance().Set(ctx, s.LoginMenuCacheKey(code, identity.Id), records.Records, 8*24*time.Hour)
 	return
 }

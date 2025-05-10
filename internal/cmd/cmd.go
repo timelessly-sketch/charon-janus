@@ -21,10 +21,11 @@ var (
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			s := g.Server()
 			cache.SetAdapter(ctx)
-			s.BindMiddleware("/*any", []ghttp.HandlerFunc{
+			s.BindMiddlewareDefault([]ghttp.HandlerFunc{
 				ghttp.MiddlewareCORS,
-				ghttp.MiddlewareHandlerResponse,
 				service.Middleware().AuthMiddleware,
+				service.Middleware().ProxyPlatform,
+				//ghttp.MiddlewareHandlerResponse,
 			}...)
 
 			s.Group("/", func(group *ghttp.RouterGroup) {
@@ -38,7 +39,7 @@ var (
 				)
 			})
 			s.Run()
-			return nil
+			return
 		},
 	}
 )

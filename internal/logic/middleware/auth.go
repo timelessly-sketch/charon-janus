@@ -7,6 +7,8 @@ import (
 	"context"
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"
+	"github.com/gogf/gf/v2/text/gregex"
+	"github.com/gogf/gf/v2/text/gstr"
 	"net/http"
 )
 
@@ -28,12 +30,10 @@ func (m *sMiddleware) AuthMiddleware(r *ghttp.Request) {
 		tokenMiss    = g.Map{"code": http.StatusUnauthorized, "message": "token缺失"}
 		tokenInvalid = g.Map{"code": http.StatusUnauthorized, "message": "token解析异常"}
 	)
-
-	if handler.GetMetaTag("noAuth") == "true" || handler == nil {
+	if handler.GetMetaTag("noAuth") == "true" {
 		r.Middleware.Next()
 		return
 	}
-
 	authHeader := r.Header.Get("Authorization")
 	if authHeader == "" {
 		r.Response.WriteStatusExit(http.StatusUnauthorized, tokenMiss)
@@ -46,7 +46,7 @@ func (m *sMiddleware) AuthMiddleware(r *ghttp.Request) {
 		return
 	}
 
-	flag, err := service.Api().AuthRoleApi(r.Context(), claims.Id, handler.Handler.Router.Uri, method)
+	flag, err := service.Api().AuthRoleApi(r.Context(), claims.Id, m.cleanProxyPath(r.URL.Path), method)
 	if err != nil {
 		g.Log().Error(r.Context(), err.Error())
 		r.Response.WriteStatusExit(http.StatusInternalServerError)
@@ -56,7 +56,6 @@ func (m *sMiddleware) AuthMiddleware(r *ghttp.Request) {
 		r.Response.WriteStatusExit(http.StatusOK, apiNotAuth)
 		return
 	}
-
 	r.SetCtxVar("user", claims.Identity)
 	r.Middleware.Next()
 }
@@ -67,4 +66,25 @@ func (m *sMiddleware) GetUserIdentity(ctx context.Context) (user model.Identity)
 		return
 	}
 	return
+}
+
+func (m *sMiddleware) cleanProxyPath(path string) string {
+	if path == "" || path == "/" {
+		return "/"
+	}
+
+	parts := gstr.Split(path, "/")
+	var cleanParts []string
+
+	for _, p := range parts {
+		if p != "" {
+			cleanParts = append(cleanParts, p)
+		}
+	}
+
+	if len(cleanParts) > 0 && gregex.IsMatchString(`^\d+$`, cleanParts[len(cleanParts)-1]) {
+		cleanParts = cleanParts[:len(cleanParts)-1]
+	}
+
+	return "/" + gstr.Join(cleanParts, "/")
 }

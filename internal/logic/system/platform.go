@@ -2,12 +2,14 @@ package system
 
 import (
 	"charon-janus/internal/dao"
+	"charon-janus/internal/model/entity"
 	"charon-janus/internal/model/input"
 	"charon-janus/internal/service"
 	"context"
 	"github.com/gogf/gf/v2/database/gdb"
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/os/gtime"
 	"time"
 )
 
@@ -66,6 +68,17 @@ func (s *sPlatForm) Options(ctx context.Context) (records []input.PlatFormModelL
 		}).Scan(&records); err != nil {
 		return
 	}
+	return
+}
+
+func (s *sPlatForm) ProxyPath(ctx context.Context, path, method string) (record entity.SysPlatform, err error) {
+	err = dao.AuthApi.Ctx(ctx).As("a").Fields("p.*").
+		LeftJoin(dao.SysPlatform.Table(), "p", "a.platform_code = p.platform_code").
+		Where("a.path = ?", path).Where("a.method = ?", method).Cache(gdb.CacheOption{
+		Duration: 7 * gtime.D,
+		Force:    false,
+	}).Scan(&record)
+	// todo 需要清理缓存 后面再来改
 	return
 }
 

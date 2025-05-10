@@ -9,13 +9,14 @@ type AccountLoginInp struct {
 }
 
 type LoginModel struct {
-	Id       int      `json:"id" dc:"用户ID"`
-	Avatar   string   `json:"avatar" dc:"头像"`
-	Username string   `json:"username" dc:"用户名"`
-	Nickname string   `json:"nickname" dc:"昵称"`
-	Name     string   `json:"name" dc:"中文名"`
-	Token    string   `json:"token" dc:"token"`
-	Role     []string `json:"role" dc:"权限组"`
+	Id              int      `json:"id" dc:"用户ID"`
+	Avatar          string   `json:"avatar" dc:"头像"`
+	Username        string   `json:"username" dc:"用户名"`
+	Nickname        string   `json:"nickname" dc:"昵称"`
+	Name            string   `json:"name" dc:"中文名"`
+	Token           string   `json:"token" dc:"token"`
+	Role            []string `json:"role" dc:"权限组"`
+	DefaultPlatform string   `json:"default_platform" dc:"默认平台"`
 }
 
 type UserRoutes struct {
