@@ -2,6 +2,7 @@ package system
 
 import (
 	"charon-janus/internal/dao"
+	"charon-janus/internal/library/cache"
 	"charon-janus/internal/model/entity"
 	"charon-janus/internal/model/input"
 	"charon-janus/internal/service"
@@ -10,7 +11,6 @@ import (
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/os/gtime"
-	"time"
 )
 
 type sPlatForm struct{}
@@ -46,7 +46,7 @@ func (s *sPlatForm) Edit(ctx context.Context, inp *input.PlatFormEditInput) (err
 		if _, err = dao.SysPlatform.Ctx(ctx).WherePri(inp.Id).Data(&inp.SysPlatform).Update(); err != nil {
 			return err
 		}
-		return g.DB().GetCore().ClearCache(ctx, dao.SysPlatform.Table())
+		return cache.ClearDBCache(ctx)
 	})
 }
 
@@ -56,14 +56,18 @@ func (s *sPlatForm) Options(ctx context.Context) (records []input.PlatFormModelL
 		identity = service.Middleware().GetUserIdentity(ctx)
 	)
 
-	values, err := dao.SysAuthRoles.Ctx(ctx).Fields("DISTINCT "+cols.PlatformCode).Where(cols.SysUserId, identity.Id).Array()
+	values, err := dao.SysAuthRoles.Ctx(ctx).Fields("DISTINCT "+cols.PlatformCode).Where(cols.SysUserId, identity.Id).
+		Cache(gdb.CacheOption{
+			Duration: 1 * gtime.D,
+			Force:    false,
+		}).Array()
 	if err != nil {
 		return
 	}
 	if err = dao.SysPlatform.Ctx(ctx).WhereIn(dao.SysAuthRoles.Columns().PlatformCode, values).
 		Where(dao.SysPlatform.Columns().Status, 1).
 		Cache(gdb.CacheOption{
-			Duration: 10 * time.Minute,
+			Duration: 1 * gtime.D,
 			Force:    false,
 		}).Scan(&records); err != nil {
 		return
@@ -75,10 +79,9 @@ func (s *sPlatForm) ProxyPath(ctx context.Context, path, method string) (record 
 	err = dao.AuthApi.Ctx(ctx).As("a").Fields("p.*").
 		LeftJoin(dao.SysPlatform.Table(), "p", "a.platform_code = p.platform_code").
 		Where("a.path = ?", path).Where("a.method = ?", method).Cache(gdb.CacheOption{
-		Duration: 7 * gtime.D,
+		Duration: 1 * gtime.D,
 		Force:    false,
 	}).Scan(&record)
-	// todo 需要清理缓存 后面再来改
 	return
 }
 

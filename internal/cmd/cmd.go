@@ -25,7 +25,7 @@ var (
 				ghttp.MiddlewareCORS,
 				service.Middleware().AuthMiddleware,
 				service.Middleware().ProxyPlatform,
-				//ghttp.MiddlewareHandlerResponse,
+				ghttp.MiddlewareHandlerResponse,
 			}...)
 
 			s.Group("/", func(group *ghttp.RouterGroup) {

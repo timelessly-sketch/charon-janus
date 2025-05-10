@@ -2,6 +2,7 @@ package privilege
 
 import (
 	"charon-janus/internal/dao"
+	"charon-janus/internal/library/cache"
 	"charon-janus/internal/model/entity"
 	"charon-janus/internal/model/input"
 	"charon-janus/internal/service"
@@ -54,7 +55,7 @@ func (s *sApi) Edit(ctx context.Context, inp input.ApiInput) (err error) {
 			return
 		}
 	}
-	return g.DB().GetCore().ClearCache(ctx, dao.AuthApi.Table())
+	return cache.ClearDBCache(ctx)
 }
 
 func (s *sApi) verify(ctx context.Context, id int, code string, scoreMap g.Map) (err error) {
@@ -117,7 +118,7 @@ func (s *sApi) RoleApiEdit(ctx context.Context, apiIds []int, roleId int) (err e
 		_, err = dao.AuthRoleApi.Ctx(ctx).Data(&apiList).Insert()
 	}
 
-	return g.DB().GetCore().ClearCache(ctx, dao.SysAuthRoles.Table())
+	return cache.ClearDBCache(ctx)
 }
 
 func (s *sApi) AuthRoleApi(ctx context.Context, userId int, path, method string) (bool, error) {

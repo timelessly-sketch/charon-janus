@@ -2,6 +2,7 @@ package system
 
 import (
 	"charon-janus/internal/dao"
+	"charon-janus/internal/library/cache"
 	"charon-janus/internal/model/entity"
 	"charon-janus/internal/model/input"
 	"charon-janus/internal/service"
@@ -112,7 +113,7 @@ func (s *sUser) Edit(ctx context.Context, inp *input.UserEditInput) (err error) 
 		if len(added) > 0 {
 			_, err = dao.SysAuthRoles.Ctx(ctx).Data(&authList).Insert()
 		}
-		return
+		return cache.ClearDBCache(ctx)
 	})
 }
 

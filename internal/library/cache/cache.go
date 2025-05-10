@@ -47,3 +47,7 @@ func RemoveByPrefix(ctx context.Context, prefix string) (err error) {
 	}
 	return nil
 }
+
+func ClearDBCache(ctx context.Context) (err error) {
+	return g.DB().GetCache().Clear(ctx)
+}
