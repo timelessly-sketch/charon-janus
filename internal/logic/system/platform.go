@@ -2,7 +2,6 @@ package system
 
 import (
 	"charon-janus/internal/dao"
-	"charon-janus/internal/library/cache"
 	"charon-janus/internal/model/entity"
 	"charon-janus/internal/model/input"
 	"charon-janus/internal/service"
@@ -46,7 +45,7 @@ func (s *sPlatForm) Edit(ctx context.Context, inp *input.PlatFormEditInput) (err
 		if _, err = dao.SysPlatform.Ctx(ctx).WherePri(inp.Id).Data(&inp.SysPlatform).Update(); err != nil {
 			return err
 		}
-		return cache.ClearDBCache(ctx)
+		return g.DB().GetCache().Clear(ctx)
 	})
 }
 
