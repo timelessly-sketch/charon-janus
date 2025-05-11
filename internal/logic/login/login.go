@@ -36,7 +36,7 @@ func (s *sLogin) Login(ctx context.Context, inp *input.AccountLoginInp) (records
 		ipa  string
 		user entity.SysUser
 	)
-	if err = dao.SysUser.Ctx(ctx).Where(dao.SysUser.Columns().Nickname, inp.Nickname).Scan(&user); err != nil || gerror.Is(err, sql.ErrNoRows) {
+	if err = dao.SysUser.Ctx(ctx).Where(dao.SysUser.Columns().Username, inp.UserName).Scan(&user); err != nil || gerror.Is(err, sql.ErrNoRows) {
 		g.Log().Warning(ctx, err)
 		return records, gerror.New("用户不存在")
 	}

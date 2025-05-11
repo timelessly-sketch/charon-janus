@@ -3,7 +3,7 @@ package input
 import "charon-janus/internal/model/entity"
 
 type AccountLoginInp struct {
-	Nickname string `json:"nickname" v:"required#昵称不能为空" dc:"用户名"`
+	UserName string `json:"username" v:"required#用户名不能为空" dc:"用户名"`
 	Password string `json:"password" v:"required#密码不能为空" dc:"密码"`
 	FreeIpa  bool   `json:"freeIpa"`
 }
