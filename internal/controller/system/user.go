@@ -34,7 +34,7 @@ func (s *sUser) Edit(ctx context.Context, req *user.EditReq) (res *user.EditRes,
 	return
 }
 
-func (s *sUser) Reset(ctx context.Context, req *user.ResetReq) (_ *user.ResetRes, err error) {
-	err = service.User().Reset(ctx, req.Username)
+func (s *sUser) Reset(ctx context.Context, req *user.ResetPwdReq) (_ *user.ResetPwdRes, err error) {
+	err = service.User().ResetPwd(ctx, &req.UserResetPwd)
 	return
 }

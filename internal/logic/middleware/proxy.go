@@ -20,6 +20,8 @@ func (m *sMiddleware) ProxyPlatform(r *ghttp.Request) {
 		requestURI = r.URL.Path
 		method     = r.Method
 		ctx        = r.Context()
+		user       = m.GetUserIdentity(ctx)
+		apiMiss    = g.Map{"code": http.StatusUnauthorized, "message": "接口不存在"}
 	)
 	record, err := service.PlatForm().ProxyPath(ctx, m.cleanProxyPath(requestURI), method)
 	if err != nil {
@@ -37,7 +39,7 @@ func (m *sMiddleware) ProxyPlatform(r *ghttp.Request) {
 	u, err := url.Parse(record.ServerUrl)
 	if err != nil {
 		g.Log().Errorf(ctx, "Invalid server URL: %s, err: %s", record.ServerUrl, err)
-		r.Response.WriteStatusExit(http.StatusInternalServerError)
+		r.Response.WriteStatusExit(http.StatusInternalServerError, apiMiss)
 		return
 	}
 
@@ -55,7 +57,8 @@ func (m *sMiddleware) ProxyPlatform(r *ghttp.Request) {
 			req.URL.Host = u.Host
 			req.URL.Path = r.URL.Path
 			req.URL.RawQuery = r.URL.RawQuery
-			req.Host = u.Host
+
+			req.Header.Add("name", user.Username)
 			g.Log().Infof(ctx, "%s, server request: %s", proxyInfo, req.URL.String())
 		},
 		ErrorHandler: func(w http.ResponseWriter, req *http.Request, err error) {

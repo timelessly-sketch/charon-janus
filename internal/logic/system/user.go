@@ -33,7 +33,7 @@ func (s *sUser) List(ctx context.Context, inp *input.UserInput) (records []input
 		db = db.WhereLike(cols.Name, "%"+inp.Name+"%")
 	}
 	if inp.UserName != "" {
-		db = db.WhereLike(cols.UserName, "%"+inp.UserName+"%")
+		db = db.WhereLike(cols.Username, "%"+inp.UserName+"%")
 	}
 	err = db.Page(inp.Page, inp.Size).ScanAndCount(&records, &total, true)
 	return
@@ -64,8 +64,8 @@ func (s *sUser) Edit(ctx context.Context, inp *input.UserEditInput) (err error) 
 	)
 
 	if err = s.verify(ctx, inp.Id, g.Map{
-		cols.NickName: inp.Name,
-		cols.UserName: inp.UserName,
+		cols.Nickname: inp.Name,
+		cols.Username: inp.UserName,
 		cols.Email:    inp.Email,
 		cols.Phone:    inp.Phone,
 	}); err != nil {
@@ -116,11 +116,9 @@ func (s *sUser) Edit(ctx context.Context, inp *input.UserEditInput) (err error) 
 	})
 }
 
-func (s *sUser) Reset(ctx context.Context, username string) (err error) {
+func (s *sUser) ResetPwd(ctx context.Context, inp *input.UserResetPwd) (err error) {
 	cols := dao.SysUser.Columns()
-	if _, err = dao.SysUser.Ctx(ctx).Where(cols.UserName, username).Data(cols.Password, s.generatePassword(username)).Update(); err != nil {
-		return err
-	}
+	_, err = dao.SysUser.Ctx(ctx).WherePri(inp.Id).Data(cols.Password, s.generatePassword(inp.Password)).Update()
 	return
 }
 
@@ -128,8 +126,8 @@ func (s *sUser) verify(ctx context.Context, id int, scoreMap g.Map) (err error) 
 	var (
 		cols   = dao.SysUser.Columns()
 		msgMap = g.MapStrStr{
-			cols.NickName: "昵称已存在，请换一个",
-			cols.UserName: "英文名已存在，请换一个",
+			cols.Nickname: "昵称已存在，请换一个",
+			cols.Username: "英文名已存在，请换一个",
 			cols.Email:    "邮箱已存在，请换一个",
 			cols.Phone:    "电话已存在，请换一个",
 		}

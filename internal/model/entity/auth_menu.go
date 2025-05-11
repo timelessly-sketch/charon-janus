@@ -20,7 +20,6 @@ type AuthMenu struct {
 	MenuType      string      `json:"menuType"      orm:"menu_type"      description:"菜单类型：目录/页面"`     // 菜单类型：目录/页面
 	ComponentPath string      `json:"componentPath" orm:"component_path" description:"组件文件路径"`         // 组件文件路径
 	Hide          bool        `json:"hide"          orm:"hide"           description:"是否隐藏菜单"`         // 是否隐藏菜单
-	ActiveMenu    string      `json:"activeMenu"    orm:"active_menu"    description:"激活显示的菜单路径"`      // 激活显示的菜单路径
 	KeepAlive     bool        `json:"keepAlive"     orm:"keep_alive"     description:"是否缓存页面"`         // 是否缓存页面
 	WithoutTab    bool        `json:"withoutTab"    orm:"without_tab"    description:"当前路由不会被添加到Tab中"` // 当前路由不会被添加到Tab中
 	Href          string      `json:"href"          orm:"href"           description:"外部链接地址"`         // 外部链接地址

@@ -13,8 +13,8 @@ import (
 type SysUser struct {
 	g.Meta     `orm:"table:sys_user, do:true"`
 	Id         interface{} //
-	NickName   interface{} // 昵称
-	UserName   interface{} // 英文名
+	Nickname   interface{} // 昵称
+	Username   interface{} // 英文名
 	Password   interface{} // 密码
 	Name       interface{} // 中文名
 	Department interface{} // 部门

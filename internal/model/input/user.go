@@ -19,8 +19,8 @@ type UserModelDetail struct {
 
 type UserEditInput struct {
 	Id         int    `json:"id"         dc:""`
-	NickName   string `json:"nickName"   dc:"昵称"`
-	UserName   string `json:"userName"   dc:"英文名"`
+	NickName   string `json:"nickname"   dc:"昵称"`
+	UserName   string `json:"username"   dc:"英文名"`
 	Password   string `json:"password"   dc:"密码"`
 	Name       string `json:"name"       dc:"中文名"`
 	Department string `json:"department" dc:"部门"`
@@ -31,4 +31,9 @@ type UserEditInput struct {
 	AvatarUrl  string `json:"avatarUrl"  dc:"头像"`
 	Remark     string `json:"remark"     dc:"备注"`
 	RoleIds    []int  `json:"roleIds"    dc:"规则id"`
+}
+
+type UserResetPwd struct {
+	Id       int    `json:"id" v:"required"`
+	Password string `json:"password" v:"password#密码长度需在6~18之间" dc:"新密码"`
 }

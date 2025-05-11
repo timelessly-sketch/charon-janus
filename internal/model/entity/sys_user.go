@@ -11,8 +11,8 @@ import (
 // SysUser is the golang structure for table sys_user.
 type SysUser struct {
 	Id         int         `json:"id"         orm:"id"         description:""`                 //
-	NickName   string      `json:"nickName"   orm:"nick_name"  description:"昵称"`               // 昵称
-	UserName   string      `json:"userName"   orm:"user_name"  description:"英文名"`              // 英文名
+	Nickname   string      `json:"nickname"   orm:"nickname"   description:"昵称"`               // 昵称
+	Username   string      `json:"username"   orm:"username"   description:"英文名"`              // 英文名
 	Password   string      `json:"password"   orm:"password"   description:"密码"`               // 密码
 	Name       string      `json:"name"       orm:"name"       description:"中文名"`              // 中文名
 	Department string      `json:"department" orm:"department" description:"部门"`               // 部门

@@ -22,7 +22,6 @@ type AuthMenu struct {
 	MenuType      interface{} // 菜单类型：目录/页面
 	ComponentPath interface{} // 组件文件路径
 	Hide          interface{} // 是否隐藏菜单
-	ActiveMenu    interface{} // 激活显示的菜单路径
 	KeepAlive     interface{} // 是否缓存页面
 	WithoutTab    interface{} // 当前路由不会被添加到Tab中
 	Href          interface{} // 外部链接地址

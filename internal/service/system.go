@@ -22,7 +22,7 @@ type (
 		List(ctx context.Context, inp *input.UserInput) (records []input.UserModelList, total int, err error)
 		Detail(ctx context.Context, id int) (records input.UserModelDetail, err error)
 		Edit(ctx context.Context, inp *input.UserEditInput) (err error)
-		Reset(ctx context.Context, username string) (err error)
+		ResetPwd(ctx context.Context, inp *input.UserResetPwd) (err error)
 	}
 )
 

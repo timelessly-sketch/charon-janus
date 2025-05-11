@@ -36,7 +36,7 @@ func (s *sLogin) Login(ctx context.Context, inp *input.AccountLoginInp) (records
 		ipa  string
 		user entity.SysUser
 	)
-	if err = dao.SysUser.Ctx(ctx).Where(dao.SysUser.Columns().NickName, inp.Nickname).Scan(&user); err != nil || gerror.Is(err, sql.ErrNoRows) {
+	if err = dao.SysUser.Ctx(ctx).Where(dao.SysUser.Columns().Nickname, inp.Nickname).Scan(&user); err != nil || gerror.Is(err, sql.ErrNoRows) {
 		g.Log().Warning(ctx, err)
 		return records, gerror.New("用户不存在")
 	}
@@ -49,8 +49,8 @@ func (s *sLogin) Login(ctx context.Context, inp *input.AccountLoginInp) (records
 	}
 	generateJWT, err := token.GenerateJWT(ctx, &model.Identity{
 		Id:       user.Id,
-		Nickname: user.NickName,
-		Username: user.UserName,
+		Nickname: user.Nickname,
+		Username: user.Username,
 		Name:     user.Name,
 		UserId:   user.UserId,
 	})
@@ -66,8 +66,8 @@ func (s *sLogin) Login(ctx context.Context, inp *input.AccountLoginInp) (records
 	records = input.LoginModel{
 		Id:       user.Id,
 		Avatar:   user.AvatarUrl,
-		Username: user.UserName,
-		Nickname: user.NickName,
+		Username: user.Username,
+		Nickname: user.Nickname,
 		Name:     user.Name,
 		Token:    generateJWT,
 		Role:     gconv.Strings(array),

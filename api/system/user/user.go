@@ -29,9 +29,9 @@ type EditReq struct {
 }
 type EditRes struct{}
 
-type ResetReq struct {
-	g.Meta   `path:"/system/user/reset" method:"post" summary:"重置密码"`
-	Username string `json:"Username" v:"required#用户名缺失"`
+type ResetPwdReq struct {
+	g.Meta `path:"/system/user/resetPwd" method:"post" summary:"重置密码"`
+	input.UserResetPwd
 }
 
-type ResetRes struct{}
+type ResetPwdRes struct{}

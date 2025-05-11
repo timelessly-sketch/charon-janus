@@ -31,7 +31,6 @@ type AuthMenuColumns struct {
 	MenuType      string // 菜单类型：目录/页面
 	ComponentPath string // 组件文件路径
 	Hide          string // 是否隐藏菜单
-	ActiveMenu    string // 激活显示的菜单路径
 	KeepAlive     string // 是否缓存页面
 	WithoutTab    string // 当前路由不会被添加到Tab中
 	Href          string // 外部链接地址
@@ -54,7 +53,6 @@ var authMenuColumns = AuthMenuColumns{
 	MenuType:      "menu_type",
 	ComponentPath: "component_path",
 	Hide:          "hide",
-	ActiveMenu:    "active_menu",
 	KeepAlive:     "keep_alive",
 	WithoutTab:    "without_tab",
 	Href:          "href",
