@@ -1,10 +1,9 @@
 package middleware
 
 import (
+	"charon-janus/internal/library/contexts"
 	"charon-janus/internal/library/token"
-	"charon-janus/internal/model"
 	"charon-janus/internal/service"
-	"context"
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"
 	"github.com/gogf/gf/v2/text/gregex"
@@ -12,20 +11,11 @@ import (
 	"net/http"
 )
 
-type sMiddleware struct{}
-
-func NewMiddleware() *sMiddleware {
-	return &sMiddleware{}
-}
-
-func init() {
-	service.RegisterMiddleware(NewMiddleware())
-}
-
 func (m *sMiddleware) AuthMiddleware(r *ghttp.Request) {
 	var (
 		handler      = r.GetServeHandler()
 		method       = r.Method
+		ctx          = r.Context()
 		apiNotAuth   = g.Map{"code": http.StatusForbidden, "message": "接口未授权"}
 		tokenMiss    = g.Map{"code": http.StatusUnauthorized, "message": "token缺失"}
 		tokenInvalid = g.Map{"code": http.StatusUnauthorized, "message": "token解析异常"}
@@ -46,9 +36,9 @@ func (m *sMiddleware) AuthMiddleware(r *ghttp.Request) {
 		return
 	}
 
-	flag, err := service.Api().AuthRoleApi(r.Context(), claims.Id, m.cleanProxyPath(r.URL.Path), method)
+	flag, err := service.Api().AuthRoleApi(ctx, claims.Id, m.cleanProxyPath(r.URL.Path), method)
 	if err != nil {
-		g.Log().Error(r.Context(), err.Error())
+		g.Log().Error(ctx, err.Error())
 		r.Response.WriteStatusExit(http.StatusInternalServerError)
 		return
 	}
@@ -56,16 +46,8 @@ func (m *sMiddleware) AuthMiddleware(r *ghttp.Request) {
 		r.Response.WriteStatusExit(http.StatusOK, apiNotAuth)
 		return
 	}
-	r.SetCtxVar("user", claims.Identity)
+	contexts.SetUser(ctx, &claims.Identity)
 	r.Middleware.Next()
-}
-
-func (m *sMiddleware) GetUserIdentity(ctx context.Context) (user model.Identity) {
-	if err := g.RequestFromCtx(ctx).GetCtxVar("user").Scan(&user); err != nil {
-		g.Log().Error(ctx, err)
-		return
-	}
-	return
 }
 
 func (m *sMiddleware) cleanProxyPath(path string) string {

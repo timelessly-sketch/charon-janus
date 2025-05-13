@@ -1,13 +1,16 @@
 package login
 
 import (
+	"charon-janus/internal/consts"
 	"charon-janus/internal/dao"
 	"charon-janus/internal/library/cache"
+	"charon-janus/internal/library/contexts"
 	"charon-janus/internal/library/token"
 	"charon-janus/internal/model"
 	"charon-janus/internal/model/entity"
 	"charon-janus/internal/model/input"
 	"charon-janus/internal/service"
+	"charon-janus/utility/location"
 	"context"
 	"crypto/sha256"
 	"database/sql"
@@ -17,6 +20,8 @@ import (
 	"github.com/gogf/gf/v2/container/gvar"
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/os/gctx"
+	"github.com/gogf/gf/v2/os/gtime"
 	"github.com/gogf/gf/v2/util/gconv"
 	"time"
 )
@@ -32,22 +37,27 @@ func init() {
 }
 
 func (s *sLogin) Login(ctx context.Context, inp *input.AccountLoginInp) (records input.LoginModel, err error) {
-	var (
-		ipa  string
-		user entity.SysUser
-	)
+	var user entity.SysUser
 	if err = dao.SysUser.Ctx(ctx).Where(dao.SysUser.Columns().Username, inp.UserName).Scan(&user); err != nil || gerror.Is(err, sql.ErrNoRows) {
 		g.Log().Warning(ctx, err)
-		return records, gerror.New("用户不存在")
+		return input.LoginModel{Username: inp.UserName}, gerror.New("用户不存在")
 	}
 
 	if inp.FreeIpa {
-		ipa = ""
+		//ipa = ""
 	}
-	if s.generatePassword(inp.Password, ipa) != user.Password {
+	records = input.LoginModel{
+		Id:       user.Id,
+		Avatar:   user.AvatarUrl,
+		Username: user.Username,
+		Nickname: user.Nickname,
+		Name:     user.Name,
+	}
+
+	if s.generatePassword(inp.Password, "") != user.Password {
 		return records, gerror.New("密码错误")
 	}
-	generateJWT, err := token.GenerateJWT(ctx, &model.Identity{
+	records.Token, err = token.GenerateJWT(ctx, &model.Identity{
 		Id:       user.Id,
 		Nickname: user.Nickname,
 		Username: user.Username,
@@ -58,27 +68,19 @@ func (s *sLogin) Login(ctx context.Context, inp *input.AccountLoginInp) (records
 		g.Log().Warning(ctx, err)
 		return
 	}
-	array, err := g.DB().Model("sys_auth_roles sa").Fields("r.role_key").LeftJoin("auth_role r", "sa.auth_role_id = r.id").Where("sa.sys_user_id = ?", user.Id).Array()
+	array, err := g.DB().Model("sys_auth_roles sa").Fields("r.role_key").
+		LeftJoin("auth_role r", "sa.auth_role_id = r.id").Where("sa.sys_user_id = ?", user.Id).Array()
 	if err != nil {
 		g.Log().Warning(ctx, err)
 		return records, gerror.New("获取权限失败")
 	}
-	records = input.LoginModel{
-		Id:       user.Id,
-		Avatar:   user.AvatarUrl,
-		Username: user.Username,
-		Nickname: user.Nickname,
-		Name:     user.Name,
-		Token:    generateJWT,
-		Role:     gconv.Strings(array),
-	}
-
+	records.Role = gconv.Strings(array)
 	return
 }
 
-func (s *sLogin) UserRoutes(ctx context.Context, code string) (records input.UserRoutes, err error) {
+func (s *sLogin) UserRoutes(ctx context.Context, code string) (records []input.UserRoutes, err error) {
 	var (
-		identity         = service.Middleware().GetUserIdentity(ctx)
+		identity         = contexts.Get(ctx).User
 		menuList         = make([]entity.AuthMenu, 0)
 		menuIDs          = garray.NewIntArray(true)
 		collectParentIDs func(pid int)
@@ -96,7 +98,7 @@ func (s *sLogin) UserRoutes(ctx context.Context, code string) (records input.Use
 		return
 	}
 	if !get.IsEmpty() {
-		err = gconv.Structs(get, &records.Records)
+		err = gconv.Structs(get, &records)
 		return
 	}
 	err = g.DB().Model("sys_user u").
@@ -128,11 +130,11 @@ func (s *sLogin) UserRoutes(ctx context.Context, code string) (records input.Use
 			collectParentIDs(menu.Pid)
 		}
 	}
-	if err = dao.AuthMenu.Ctx(ctx).OrderAsc(cols.Order).WhereIn(cols.Id, gvar.New(menuIDs).Ints()).Scan(&records.Records); err != nil {
+	if err = dao.AuthMenu.Ctx(ctx).OrderAsc(cols.Order).WhereIn(cols.Id, gvar.New(menuIDs).Ints()).Scan(&records); err != nil {
 		return
 	}
 
-	err = cache.Instance().Set(ctx, s.LoginMenuCacheKey(code, identity.Id), records.Records, 8*24*time.Hour)
+	err = cache.Instance().Set(ctx, s.LoginMenuCacheKey(code, identity.Id), records, 8*24*time.Hour)
 	return
 }
 
@@ -144,4 +146,34 @@ func (s *sLogin) generatePassword(password, ipa string) string {
 	hash := sha256.New()
 	hash.Write(gconv.Bytes(password))
 	return hex.EncodeToString(hash.Sum(nil)) + ipa
+}
+
+func (s *sLogin) InsertLoginLog(ctx context.Context, record input.LoginModel, err error) {
+	var (
+		r = g.RequestFromCtx(ctx)
+	)
+	log := &entity.SysLoginLog{
+		ReqId:     gctx.CtxId(ctx),
+		UserId:    record.Id,
+		Username:  record.Username,
+		LoginAt:   gtime.Now(),
+		LoginIp:   location.GetClientIp(r),
+		UserAgent: r.UserAgent(),
+		Status:    consts.StatusEnabled,
+	}
+	if err != nil {
+		log.ErrMsg = err.Error()
+		log.Status = consts.StatusDisable
+	}
+	_, _ = dao.SysLoginLog.Ctx(ctx).Data(log).Insert()
+	return
+}
+
+func (s *sLogin) GetLoginLog(ctx context.Context, inp input.LoginLogInp) (records []input.LoginLogList, total int, err error) {
+	db := dao.SysLoginLog.Ctx(ctx)
+	if inp.Username != "" {
+		db = db.WhereLike(dao.SysLoginLog.Columns().Username, "%"+inp.Username+"%")
+	}
+	err = db.Page(inp.Page, inp.Size).ScanAndCount(&records, &total, true)
+	return
 }

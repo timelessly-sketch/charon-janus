@@ -19,5 +19,14 @@ type LoginModel struct {
 }
 
 type UserRoutes struct {
-	Records []entity.AuthMenu `json:"records"`
+	entity.AuthMenu
+}
+
+type LoginLogInp struct {
+	Username string `json:"username"`
+	PageReq
+}
+
+type LoginLogList struct {
+	entity.SysLoginLog
 }

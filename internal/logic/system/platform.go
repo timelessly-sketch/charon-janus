@@ -2,6 +2,7 @@ package system
 
 import (
 	"charon-janus/internal/dao"
+	"charon-janus/internal/library/contexts"
 	"charon-janus/internal/model/entity"
 	"charon-janus/internal/model/input"
 	"charon-janus/internal/service"
@@ -52,7 +53,7 @@ func (s *sPlatForm) Edit(ctx context.Context, inp *input.PlatFormEditInput) (err
 func (s *sPlatForm) Options(ctx context.Context) (records []input.PlatFormModelList, err error) {
 	var (
 		cols     = dao.SysAuthRoles.Columns()
-		identity = service.Middleware().GetUserIdentity(ctx)
+		identity = contexts.Get(ctx).User
 	)
 
 	values, err := dao.SysAuthRoles.Ctx(ctx).Fields("DISTINCT "+cols.PlatformCode).Where(cols.SysUserId, identity.Id).

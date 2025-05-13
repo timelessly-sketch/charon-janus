@@ -6,7 +6,7 @@ import (
 )
 
 type AccountLoginReq struct {
-	g.Meta `path:"/auth/login" method:"post" summary:"登录" noAuth:"true"`
+	g.Meta `path:"/auth/login" method:"POST" dc:"登录" noAuth:"true"`
 	input.AccountLoginInp
 }
 
@@ -15,10 +15,20 @@ type AccountLoginRes struct {
 }
 
 type RoutesReq struct {
-	g.Meta       `path:"/auth/routes" method:"get" summary:"获取用户权限"`
+	g.Meta       `path:"/auth/routes" method:"GET" dc:"获取用户权限"`
 	PlatFormCode string `json:"platformCode"`
 }
 
 type RoutesRes struct {
-	input.UserRoutes
+	Records []input.UserRoutes `json:"records"`
+}
+
+type ListReq struct {
+	g.Meta `path:"/system/user/loginLog" method:"GET" dc:"登录情况"`
+	input.LoginLogInp
+}
+
+type ListRes struct {
+	Records []input.LoginLogList `json:"records"`
+	Total   int                  `json:"total"`
 }

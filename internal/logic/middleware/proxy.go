@@ -3,6 +3,7 @@ package middleware
 import (
 	"bytes"
 	"charon-janus/internal/consts"
+	"charon-janus/internal/library/contexts"
 	"charon-janus/internal/service"
 	"fmt"
 	"github.com/gogf/gf/v2/frame/g"
@@ -17,21 +18,21 @@ import (
 
 func (m *sMiddleware) ProxyPlatform(r *ghttp.Request) {
 	var (
-		requestURI = r.URL.Path
-		method     = r.Method
-		ctx        = r.Context()
-		user       = m.GetUserIdentity(ctx)
-		apiMiss    = g.Map{"code": http.StatusUnauthorized, "message": "接口不存在"}
+		ctx     = r.Context()
+		mCtx    = contexts.Get(ctx)
+		user    = mCtx.User
+		req     = mCtx.Request
+		apiMiss = g.Map{"code": http.StatusUnauthorized, "message": "接口不存在"}
 	)
-	record, err := service.PlatForm().ProxyPath(ctx, m.cleanProxyPath(requestURI), method)
+	record, err := service.PlatForm().ProxyPath(ctx, req.Path, req.Method)
 	if err != nil {
 		g.Log().Warning(ctx, err)
-		r.Response.WriteStatusExit(http.StatusInternalServerError)
+		r.Response.WriteStatusExit(http.StatusForbidden, apiMiss)
 		return
 	}
-	info := fmt.Sprintf("Api Path: %s, platform: %s", requestURI, record.PlatformCode)
+	info := fmt.Sprintf("Api Path: %s, platform: %s", req.Path, record.PlatformCode)
 	if record.PlatformCode == consts.App {
-		g.Log().Infof(ctx, info)
+		g.Log().Info(ctx, info)
 		r.Middleware.Next()
 		return
 	}
