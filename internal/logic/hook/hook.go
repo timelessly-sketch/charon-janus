@@ -5,6 +5,7 @@ import (
 	"charon-janus/internal/model/entity"
 	"charon-janus/internal/service"
 	"charon-janus/utility/location"
+	"charon-janus/utility/useragent"
 	"github.com/gogf/gf/v2/encoding/gjson"
 	"github.com/gogf/gf/v2/net/ghttp"
 	"github.com/gogf/gf/v2/os/gctx"
@@ -25,7 +26,6 @@ func init() {
 func (s *sHook) BeforeServe(r *ghttp.Request) {}
 
 func (s *sHook) AfterOutput(r *ghttp.Request) {
-
 	s.accessLog(r)
 }
 
@@ -67,12 +67,12 @@ func (s *sHook) accessLog(r *ghttp.Request) {
 	postData, _ = gjson.DecodeToJson(mReq.Body)
 
 	// post表单
-	postForm := gjson.New(gconv.String(request.PostForm)).Map()
-	if len(postForm) > 0 {
-		for k, v := range postForm {
-			postData.MustSet(k, v)
-		}
-	}
+	//postForm := gjson.New(gconv.String(request.PostForm)).Map()
+	//if len(postForm) > 0 {
+	//	for k, v := range postForm {
+	//		postData.MustSet(k, v)
+	//	}
+	//}
 	data := entity.SysLog{
 		Id:         0,
 		ReqId:      traceID,
@@ -84,6 +84,7 @@ func (s *sHook) accessLog(r *ghttp.Request) {
 		HeaderData: headerData,
 		ErrorData:  errorData,
 		UserAgent:  r.UserAgent(),
+		Browser:    useragent.GetBrowser(r.UserAgent()),
 		TakeUpTime: gconv.String(takeUpTime),
 		ClientIp:   client,
 		Timestamp:  gtime.Now(),

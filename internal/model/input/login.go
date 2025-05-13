@@ -28,5 +28,5 @@ type LoginLogInp struct {
 }
 
 type LoginLogList struct {
-	entity.SysLoginLog
+	entity.SysLog
 }

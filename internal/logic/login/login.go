@@ -1,7 +1,6 @@
 package login
 
 import (
-	"charon-janus/internal/consts"
 	"charon-janus/internal/dao"
 	"charon-janus/internal/library/cache"
 	"charon-janus/internal/library/contexts"
@@ -10,7 +9,6 @@ import (
 	"charon-janus/internal/model/entity"
 	"charon-janus/internal/model/input"
 	"charon-janus/internal/service"
-	"charon-janus/utility/location"
 	"context"
 	"crypto/sha256"
 	"database/sql"
@@ -20,8 +18,6 @@ import (
 	"github.com/gogf/gf/v2/container/gvar"
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/os/gtime"
 	"github.com/gogf/gf/v2/util/gconv"
 	"time"
 )
@@ -40,7 +36,7 @@ func (s *sLogin) Login(ctx context.Context, inp *input.AccountLoginInp) (records
 	var user entity.SysUser
 	if err = dao.SysUser.Ctx(ctx).Where(dao.SysUser.Columns().Username, inp.UserName).Scan(&user); err != nil || gerror.Is(err, sql.ErrNoRows) {
 		g.Log().Warning(ctx, err)
-		return input.LoginModel{Username: inp.UserName}, gerror.New("用户不存在")
+		return records, gerror.New("用户不存在")
 	}
 
 	if inp.FreeIpa {
@@ -74,6 +70,13 @@ func (s *sLogin) Login(ctx context.Context, inp *input.AccountLoginInp) (records
 		g.Log().Warning(ctx, err)
 		return records, gerror.New("获取权限失败")
 	}
+	contexts.SetUser(ctx, &model.Identity{
+		Id:       user.Id,
+		Nickname: user.Nickname,
+		Username: user.Username,
+		Name:     user.Name,
+		UserId:   user.UserId,
+	})
 	records.Role = gconv.Strings(array)
 	return
 }
@@ -146,34 +149,4 @@ func (s *sLogin) generatePassword(password, ipa string) string {
 	hash := sha256.New()
 	hash.Write(gconv.Bytes(password))
 	return hex.EncodeToString(hash.Sum(nil)) + ipa
-}
-
-func (s *sLogin) InsertLoginLog(ctx context.Context, record input.LoginModel, err error) {
-	var (
-		r = g.RequestFromCtx(ctx)
-	)
-	log := &entity.SysLoginLog{
-		ReqId:     gctx.CtxId(ctx),
-		UserId:    record.Id,
-		Username:  record.Username,
-		LoginAt:   gtime.Now(),
-		LoginIp:   location.GetClientIp(r),
-		UserAgent: r.UserAgent(),
-		Status:    consts.StatusEnabled,
-	}
-	if err != nil {
-		log.ErrMsg = err.Error()
-		log.Status = consts.StatusDisable
-	}
-	_, _ = dao.SysLoginLog.Ctx(ctx).Data(log).Insert()
-	return
-}
-
-func (s *sLogin) GetLoginLog(ctx context.Context, inp input.LoginLogInp) (records []input.LoginLogList, total int, err error) {
-	db := dao.SysLoginLog.Ctx(ctx)
-	if inp.Username != "" {
-		db = db.WhereLike(dao.SysLoginLog.Columns().Username, "%"+inp.Username+"%")
-	}
-	err = db.Page(inp.Page, inp.Size).ScanAndCount(&records, &total, true)
-	return
 }
