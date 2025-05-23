@@ -1,8 +1,7 @@
 module charon-janus
 
-go 1.22
+go 1.23
 
-toolchain go1.23.5
 
 require (
 	github.com/gogf/gf/contrib/drivers/mysql/v2 v2.9.0
