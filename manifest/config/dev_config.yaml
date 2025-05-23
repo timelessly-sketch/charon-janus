@@ -1,0 +1,40 @@
+server:
+  address:     ":8000"
+  #  openapiPath: "/api.json"
+  #  swaggerPath: "/swagger"
+  logPath: "log/"
+  accessLogEnabled: true
+  accessLogPattern: "{Y-m-d}.log"
+  logger:
+    path: "log/"
+    file: "{Y-m-d}.log"
+    level: "all"
+    timeFormat: "2006-01-02 15:04:05.000"
+
+logger:
+  path: "log/"
+  file: "{Y-m-d}.log"
+  level: "all"
+  timeFormat: "2006-01-02 15:04:05.000"
+  stdout: true
+  flags: 743
+
+
+database:
+  logger:
+    path: "log/sql/"
+    level:  "all"
+    stdout:  true
+  default:
+    link: "mysql:1:1@tcp(1.30:3306)/db_janus?loc=Local&parseTime=true&charset=utf8mb4"
+    debug: true
+
+# 缓存驱动
+cache:
+  adapter: "redis"  # 缓存驱动方式，支持：memory|redis|file，不填默认memory
+
+redis:
+  default:
+    address: 121.54.189.30:6379
+    db: 1
+    pass: 202411@yY
