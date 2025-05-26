@@ -37,6 +37,7 @@ var (
 					login.Login,
 					system.PlatForm,
 					system.User,
+					system.Log,
 					privilege.Menu,
 					privilege.Role,
 					privilege.Api,

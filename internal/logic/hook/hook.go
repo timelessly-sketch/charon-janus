@@ -67,12 +67,12 @@ func (s *sHook) accessLog(r *ghttp.Request) {
 	postData, _ = gjson.DecodeToJson(mReq.Body)
 
 	// post表单
-	//postForm := gjson.New(gconv.String(request.PostForm)).Map()
-	//if len(postForm) > 0 {
-	//	for k, v := range postForm {
-	//		postData.MustSet(k, v)
-	//	}
-	//}
+	postForm := gjson.New(gconv.String(request.PostForm)).Map()
+	if len(postForm) > 0 {
+		for k, v := range postForm {
+			postData.MustSet(k, v)
+		}
+	}
 	data := entity.SysLog{
 		Id:         0,
 		ReqId:      traceID,

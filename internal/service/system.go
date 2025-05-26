@@ -12,6 +12,9 @@ import (
 )
 
 type (
+	ILog interface {
+		List(ctx context.Context, inp *input.LogInput) (records []input.LogRecords, total int, err error)
+	}
 	IPlatForm interface {
 		List(ctx context.Context, inp *input.PageReq) (records []input.PlatFormModelList, total int, err error)
 		Edit(ctx context.Context, inp *input.PlatFormEditInput) (err error)
@@ -27,9 +30,21 @@ type (
 )
 
 var (
+	localLog      ILog
 	localPlatForm IPlatForm
 	localUser     IUser
 )
+
+func Log() ILog {
+	if localLog == nil {
+		panic("implement not found for interface ILog, forgot register?")
+	}
+	return localLog
+}
+
+func RegisterLog(i ILog) {
+	localLog = i
+}
 
 func PlatForm() IPlatForm {
 	if localPlatForm == nil {
