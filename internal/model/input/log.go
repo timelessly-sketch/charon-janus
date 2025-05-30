@@ -4,13 +4,11 @@ import "charon-janus/internal/model/entity"
 
 type LogInput struct {
 	UserName string `json:"username" dc:"用户名"`
-	Method   string `json:"method" dc:"请求方法"`
-	ClientIp string `json:"client_ip" dc:"请求的client_ip"`
-	StartAt  string `json:"start_at"`
-	EndAt    string `json:"end_at"`
+	Path     string `json:"path" dc:"请求路径"`
+	ClientIp string `json:"client_ip" v:"ipv4" dc:"请求的client_ip"`
 	PageReq
 }
 
 type LogRecords struct {
-	Records []entity.SysLog
+	entity.SysLog
 }

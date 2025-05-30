@@ -24,14 +24,7 @@ func (s *sLog) List(ctx context.Context, inp *input.LogInput) (records []input.L
 		cols = dao.SysLog.Columns()
 	)
 
-	if inp.StartAt != "" {
-		db = db.Where(cols.CreatedAt >= inp.StartAt).Where(cols.CreatedAt < inp.EndAt)
-	}
-	db = db.OmitEmpty().Where(g.Map{
-		cols.Username: "%" + inp.UserName + "%",
-		cols.Method:   inp.Method,
-		cols.ClientIp: inp.ClientIp,
-	})
+	db = db.OmitEmpty().Where(g.Map{cols.ClientIp: inp.ClientIp}).WhereLike(cols.Username, "%"+inp.UserName+"%").WhereLike(cols.Url, "%"+inp.Path+"%")
 	err = db.Page(inp.Page, inp.Size).ScanAndCount(&records, &total, true)
 	return
 }
